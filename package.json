@@ -5,13 +5,14 @@
     "clean": "rimraf docs/.observablehq/cache",
     "build": "rimraf dist && observable build",
     "dev": "observable preview",
-    "deploy": "observable deploy",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "observable": "observable"
   },
   "dependencies": {
     "@observablehq/framework": "latest",
     "d3-dsv": "^3.0.1",
-    "d3-time-format": "^4.1.0"
+    "d3-time-format": "^4.1.0",
+    "roughjs": "^4.6.6"
   },
   "devDependencies": {
     "rimraf": "^5.0.5"

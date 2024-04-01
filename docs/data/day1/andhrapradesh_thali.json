@@ -1,0 +1,169 @@
+[
+    {
+        "state": "Andhra Pradesh",
+        "description": "Andhra Pradesh is a southern coastal region of India. Andhra meals are combinations of spicy, tangy, and sweet flavours. Chillies, which are abundantly produced in Andhra Pradesh, and curry leaves are used copiously in most preparations of curries and chutneys.",
+        "source": "https://www.youtube.com/watch?v=-PhOVoKuuOA&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=6",
+        "thalis": [
+            {
+                "thali_name": "Andhra Vegetarian Thali",
+                "served_on": "leaf",
+                "episode_num": 9,
+                "num_of_items": 13,
+                "num_of_veg": 13,
+                "num_of_nonveg": 0,
+                "dishes": [
+                    {
+                    "dish": "SARVA PINDI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PESSARETU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "APPADALU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "AVAKAYA PACHADI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BEERAKAYA ROTI PACHADI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PERGU VADA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BAGARA ANNAM",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "JONNA MUDDA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PAPPU DAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GUTTI VANKAYA KURA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PACHI PULUSU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BENDAKAYA PULUSU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GUNPOWDER",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Andhra Non-vegetarian Thali",
+                "served_on": "leaf",
+                "episode_num": 9,
+                "num_of_items": 15,
+                "num_of_veg": 7,
+                "num_of_nonveg": 8,
+                "dishes": [
+                    {
+                    "dish": "PARMANA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PESAR GERALU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "ROTI PACHADI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PULIHORA RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "RAJU GARI KODI PULAO",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "WHITE RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "RAGI MUDDA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "NAATU KODI KURA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "VANJARAM",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MAMIDIKAYA ROYYALA IGURO",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KORA MEEN PULUSO",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MUDDA PAPPU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CURD RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GONGURA MAMSAM",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BANANA",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            }
+        ]
+    }
+]

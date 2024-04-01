@@ -1,0 +1,174 @@
+[
+    {
+        "state": "West Bengal",
+        "description": "West Bengal is a state in the eastern portion of India. It is situated along the Bay of Bengal. Rice and fish are traditional favourite foods, leading to a saying in Bengali, 'machhe bhate bangali', that translates as 'fish and rice make a Bengali'.",
+        "source": "https://www.youtube.com/watch?v=FiZtW4p4O9c&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=5",
+        "thalis": [
+            {
+                "thali_name": "Bengali Thali",
+                "served_on": "plate",
+                "episode_num": 10,
+                "num_of_items": 12,
+                "num_of_veg": 7,
+                "num_of_nonveg": 5,
+                "dishes": [
+                    {
+                    "dish": "BASANTI PULAO",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SHUKTO",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "TOPSHE MACH",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MOCHAR GHANTO",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "TIL POTTI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BHETKI PATURI",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHINGDI MACHER CHINEY KEBAB",
+                    "classification": "Non-vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "JALPAI CHUTNEY",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "CHHANAR PAYESH",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "MISHTI DOI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "PICKLE",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "LUCHI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    }
+                ]
+            },
+            {
+                "thali_name": "East Bengali Thali",
+                "served_on": "leaf",
+                "episode_num": 10,
+                "num_of_items": 17,
+                "num_of_veg": 14,
+                "num_of_nonveg": 3,
+                "dishes": [
+                    {
+                    "dish": "LEBU LONGKA AND GHEE",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "ALOO BHAJA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KUMRO PHOOL BHAJA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "POTOL BHAJA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "MISHTI ALOO BHAJA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KORLA BHAJA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BHAAT",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "ILISH BHAPA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MANGSHOR JHOL",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHITOL MUITHA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MOONG DAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "LABRA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KOCHU PATA CHINGRI",
+                    "classification": "Non-vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KANCHA AAMER CHUTNEY",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PAATI SHAPTA",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "CHOSHIR PAYESH",
+                    "classification": "Non-vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "GONDHORAAJ GHOL",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                    }
+                ]
+            }
+        ]
+    }    
+]

@@ -1,0 +1,224 @@
+[
+    {
+        "state": "Tamil Nadu",
+        "description": "Tamil Nadu is the southernmost state of India. Rice is the diet staple. The region has a rich cuisine involving both traditional non-vegetarian and vegetarian dishes made of rice, legumes, and lentils with its distinct aroma and flavour achieved by the blending of flavourings and spices.",
+        "source": "https://www.youtube.com/watch?v=5bIlL4dXDc0&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=7",
+        "thalis": [
+            {
+                "thali_name": "Chettinad Thali",
+                "served_on": "leaf",
+                "episode_num": 8,
+                "num_of_items": 16,
+                "num_of_veg": 11,
+                "num_of_nonveg": 5,
+                "dishes": [
+                    {
+                    "dish": "KARI KUZHAMBU",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KOLI KUZHAMBU",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MEEN KUZHAMBU",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KOOTU CURRY",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PORIYAL",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KARUVE PILLAI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "VAZHAIPOO VADAI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KOLI MILAGU MASALA",
+                    "classification": "Non-vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KOZHI RASAM",
+                    "classification": "Non-vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "UPPU CURRY",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "VANDAKAI MANDI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "AVAL PASSAM",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "APPALAM",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PAL PANIYARAM",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "VELLAI PANIYARAM",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "KAVANARSI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Elai Sappadu Thali",
+                "served_on": "leaf",
+                "episode_num": 8,
+                "num_of_items": 23,
+                "num_of_veg": 23,
+                "num_of_nonveg": 0,
+                "dishes": [
+                    {
+                    "dish": "PAZHAM AND SUGAR",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "ANNAM",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PARUPPU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "AKKARAVADISAL",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "VELLARIKKAI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "THAKKALI PACHADI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KOSUMALLI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BEANS PARUPPU USILI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "URIJLAI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "VAZHAKKAI PODIMAS",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "THANJAVUR RACE KOOTU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KADAMBA SAMBAR",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BONDA MORKIJZHAMBU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "THAKALI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CURD VADAI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PULIYODHORAI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "ARISI APPALAM",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KAASHI HALWA",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "KARASEV",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "MOAR",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                    },
+                    {
+                    "dish": "URULAI CHIPS",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "VEPPILAKATTI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "CUT MAANGA URUGAI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            }
+        ]
+    }
+]

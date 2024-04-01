@@ -1,0 +1,149 @@
+[
+    {
+        "state": "Goa",
+        "description": "Goa is a state on the southwestern coast of India. Rice with fish curry is the staple diet. Goan cuisine is famous for its rich variety of fish dishes and is heavily influenced by Portuguese cuisine.",
+        "source": "https://www.youtube.com/watch?v=sknGILvp6UU&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=10",
+        "thalis": [
+            {
+                "thali_name": "Goan Thali",
+                "served_on": "plate",
+                "episode_num": 5,
+                "num_of_items": 12,
+                "num_of_veg": 4,
+                "num_of_nonveg": 8,
+                "dishes": [
+                    {
+                    "dish": "RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PAPAD",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "CHAPATI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GREEN CHUTNEY",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "FISH CURRY",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CRAB XACUTI",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KISHMUR",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "FOOGATH",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "FRIED FISH",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PRAWN BALCHAO",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PORK VINDALOO",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BEBINCA",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Saraswat Thali",
+                "served_on": "leaf",
+                "episode_num": 5,
+                "num_of_items": 12,
+                "num_of_veg": 8,
+                "num_of_nonveg": 4,
+                "dishes": [
+                    {
+                    "dish": "SALAD",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PINEAPPLE KARAM",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "DAL VARAN",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BATATA BHAJI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KATHKATEM",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PRAWN UMMAN WITH RADISH",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "STUFFED POMFRET",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "RICE AND CHAPATI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PLANTAIN FRITTERS",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "TENDLI PICKLE",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "MANGANEM",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KOKUM KODI",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                    }
+                ]
+            }
+        ]
+    }
+]

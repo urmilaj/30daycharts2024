@@ -1,0 +1,159 @@
+[
+    {
+        "state": "Karnataka",
+        "description": "Rice and Ragi form the staple food in South Karnataka. Coastal Karnataka and Kodagu have distinctive cuisines of their own. Udupi cuisine of coastal Karnataka is popular all over India.",
+        "source": "https://www.youtube.com/watch?v=HRkSjE_JpSI&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=9",
+        "thalis": [
+            {
+                "thali_name": "Udupi Thali",
+                "served_on": "leaf",
+                "episode_num": 6,
+                "num_of_items": 13,
+                "num_of_veg": 13,
+                "num_of_nonveg": 0,
+                "dishes": [
+                    {
+                    "dish": "MANGO PICKLE",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "COCONUT CHUTNEY",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PALMA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PATRODE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "TAMBLI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MENASAKAI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "RASSAM",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "MATTU GULLA HULI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "JACKFRUIT PAPPAD",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "WHITE RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHITRANA RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KAKDI KADHI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PAYASSAM",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Coorgi Thali",
+                "served_on": "leaf",
+                "episode_num": 6,
+                "num_of_items": 13,
+                "num_of_veg": 12,
+                "num_of_nonveg": 1,
+                "dishes": [
+                    {
+                    "dish": "MILAGU RASSAM",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PALYA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KADAMBUTTU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "AKK ROTI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MAJJIGE HULI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "METHI RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PACHADI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "DINDA MAU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "TAMBITTU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SHAVIGE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PASSION FRUIT JUICE",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                    },
+                    {
+                    "dish": "BAMBOO SHOOT CURRY",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KUMBALA CURRY",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    }
+                ]
+            }
+        ]
+    }
+]

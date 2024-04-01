@@ -1,0 +1,134 @@
+[
+    {
+        "state": "Uttarakhand",
+        "description": "Uttarakhand often referred to as the 'Land of the Gods' due to its religious significance and numerous Hindu temples and pilgrimage centres. The primary food is vegetables, wheat being a staple, although non-vegetarian food is also served.",
+        "source": "https://www.youtube.com/watch?v=PMWD_6esn6Y&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=2",
+        "thalis": [
+            {
+                "thali_name": "Kumaoni Thali",
+                "served_on": "leaf",
+                "episode_num": 13,
+                "num_of_items": 10,
+                "num_of_veg": 10,
+                "num_of_nonveg": 0,
+                "dishes": [
+                    {
+                    "dish": "BICHOO BOOTI KA SAAG",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHURDKANI DAAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "ALOO KE GUTKE",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BHAANG KI CHUTNEY",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "NIMBOO MOOLI SANA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "ACHAR",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "MADUE KI ROTI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "POORI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KHEERA KA RAITA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BAL MITHAI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Kashmiri Pandit Thali",
+                "served_on": "plate",
+                "episode_num": 13,
+                "num_of_items": 11,
+                "num_of_veg": 4,
+                "num_of_nonveg": 7,
+                "dishes": [
+                    {
+                    "dish": "MUTTON KALIA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MUTTON ROGANJOSH",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MASC",
+                    "classification": "Non-vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "CHOK CHARWAN",
+                    "classification": "Non-vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KABARGAH",
+                    "classification": "Non-vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "CHOK WANGUN",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "NADRU YAKHNI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "STEAM RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHAMAN ROGANJOSH",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "HAAK",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MUJI CHATIN",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            }
+        ]
+    }
+]

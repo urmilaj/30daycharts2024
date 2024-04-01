@@ -1,0 +1,164 @@
+[
+    {
+        "state": "Uttar Pradesh",
+        "description": "Uttar Pradesh, and has been strongly influenced by Central Asian cuisine. Awadhi cuisine from the city of Lucknow consists of both vegetarian and non-vegetarian dishes. It is also greatly influenced by Mughlai cuisine.",
+        "source": "https://www.youtube.com/watch?v=dCGdje30pGY&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=3",
+        "thalis": [
+            {
+                "thali_name": "Banarasi Thali",
+                "served_on": "plate",
+                "episode_num": 12,
+                "num_of_items": 13,
+                "num_of_veg": 12,
+                "num_of_nonveg": 1,
+                "dishes": [
+                    {
+                    "dish": "RICAUNCH WITH BADAM CHUTNEY",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BANARASI KADHI PAKODI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BAINGAN KALONJI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BANARASI BHAJI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "NIMONA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KHATTA MITHA KOHDA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KELEY KA WADA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "GOBI MATAR TAHARI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PALAK KI PURI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KESARI MALAI POORI WITH GILORI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "BATI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHOKHA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "MOONG SPROUT KACHUMBAR IN PAPAD CUPS",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Awadhi Thali",
+                "served_on": "plate",
+                "episode_num": 12,
+                "num_of_items": 14,
+                "num_of_veg": 8,
+                "num_of_nonveg": 6,
+                "dishes": [
+                    {
+                    "dish": "AWADHI PULAO",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHICKEN KORMA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MAHI FISH",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SHAMI KEBAB",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KHOYA MATAR",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "TOMATO CHUTNEY",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BHINDI DO PAYAZA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "ALOO KI KATLI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BAINGAN RAITA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "MASOOR DAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GOBHI MUSSALLAM",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "NIMISH",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "MALAI PARATHA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "NIHARI KULCHA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    }
+                ]
+            }
+        ]
+    }
+]
