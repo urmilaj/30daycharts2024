@@ -1,0 +1,124 @@
+[
+    {
+        "state": "Gujarat",
+        "description": "Gujarat is a state along the western coast of India. Gujarati food is primarily vegetarian. Many Gujarati dishes are distinctively sweet, salty, and spicy at the same time.",
+        "source": "https://www.youtube.com/watch?v=b_uN_nd9Ay0&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=12",
+        "thalis": [
+            {
+                "thali_name": "Gujarati Thali",
+                "served_on": "plate",
+                "episode_num": 2,
+                "num_of_items": 13,
+                "num_of_veg": 11,
+                "num_of_nonveg": 0,
+                "dishes": [
+                    {
+                    "dish": "DHOODHPAK",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "KACHORI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "DHOKLA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BHINDI RAVAIYAN",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "Batata Nu CHAAL VALU RASADAR SHAAK",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KHAMAN KAKDI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "TUVER Ni Daal",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "METHI Ni CHANKI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "POORI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PICKLE",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "CHUTNEY",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PAPAD",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Bohra Thali",
+                "served_on": "plate",
+                "episode_num": 2,
+                "num_of_items": 6,
+                "num_of_veg": 4,
+                "num_of_nonveg": 2,
+                "dishes": [
+                    {
+                    "dish": "DABBA PATTICE",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MUTTON KORMA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PALIDO",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "LACHKA",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "CHAPATI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SALT & SODHENA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            }
+        ]
+    }
+]

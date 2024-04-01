@@ -1,0 +1,149 @@
+[
+    {
+        "state": "Kerala",
+        "description": "Kerala is a state on the Malabar Coast of India. Kerala cuisine includes a wide variety of vegetarian and non-vegetarian dishes prepared using fish, poultry, and meat. Rice is a dominant staple that is eaten at all times of day.",
+        "source": "https://www.youtube.com/watch?v=Xj5Ad8Nlx2w&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=8",
+        "thalis": [
+            {
+                "thali_name": "Sadhya Thali",
+                "served_on": "leaf",
+                "episode_num": 7,
+                "num_of_items": 14,
+                "num_of_veg": 14,
+                "num_of_nonveg": 0,
+                "dishes": [
+                    {
+                    "dish": "JEERA WATER",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                    },
+                    {
+                    "dish": "VAAZHA PAZHAM",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "SHARKARA VARATTY",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "BANANA CHIPS",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PAPPADAM",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "NARANGA/LIME PICKLE",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "AVIYAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "OLAN",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "VENDAKKA PACHADI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PAVAKKA THEEYAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CABBAGE THORAN",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PALAKKADAN MATTA RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PARIPPU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PALKKADAN SAMBAR",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Syrian Christian Thali",
+                "served_on": "leaf",
+                "episode_num": 7,
+                "num_of_items": 10,
+                "num_of_veg": 4,
+                "num_of_nonveg": 6,
+                "dishes": [
+                    {
+                    "dish": "MUTTON CUTLET SERVED WITH SALLAS",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHICKEN STEW",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MORU KACHI YATHU",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MULLET PATTICHATTU",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PAYAR MEZHUKKUPURATTI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "KUTTANADAN DUCK MAPPAS",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MANGO PICKLE",
+                    "classification": "Vegetarian",
+                    "role": "Condiment"
+                    },
+                    {
+                    "dish": "RED RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PALAPPAM",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PAZHAM",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            }
+        ]
+    }
+]

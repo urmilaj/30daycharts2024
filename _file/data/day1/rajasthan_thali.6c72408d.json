@@ -1,0 +1,154 @@
+[
+    {
+        "state": "Rajasthan",
+        "description": "Rajasthan means 'The Land of Kings'. The scarcity of water and fresh green vegetables have all had their effect on cooking. Thus, pickles of Rajasthan are quite famous for their tangy and spicy flavour. ",
+        "source": "https://www.youtube.com/watch?v=jOk4qHXKwbA&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=16",
+        "thalis": [
+            {
+                "thali_name": "Jaisalmer Ki Rajputana Thali",
+                "served_on": "plate",
+                "episode_num": 1,
+                "num_of_items": 13,
+                "num_of_veg": 10,
+                "num_of_nonveg": 3,
+                "dishes": [
+                    {
+                    "dish": "SAFED MAAS",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "JUNGLI MAAS",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "HANDI BOOTHE",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KER SANGRI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SHEERA",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "LAPSI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "MISRI ROTI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BAJRE KA CHOORMA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BAJRE KA SOGRA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PHULKA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GEHU KI ROTI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PAPAD",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "PICKLE",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Jaisalmer Ki Shakahari Thali",
+                "served_on": "plate",
+                "episode_num": 1,
+                "num_of_items": 12,
+                "num_of_veg": 12,
+                "num_of_nonveg": 0,
+                "dishes": [
+                    {
+                    "dish": "CHAACH KI KADHI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KER SANGRI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BADI KI SABZI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KACHAR CHANA CHAWAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MOOLI KI SABZI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BAJRE KI SABZI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHAACH",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                    },
+                    {
+                    "dish": "GEHU KI ROTI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BAJRE KI ROTI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KHEECH",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PAPAD",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            }
+        ]
+    }
+]

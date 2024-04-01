@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Part to Whole | #30DayChartChallenge - 2024</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_import/components/day1/stateThali.0febd450.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+import {registerFile} from "./_observablehq/stdlib.js";
+
+registerFile("./data/day1/andhrapradesh_thali.json", {"name":"./data/day1/andhrapradesh_thali.json","mimeType":"application/json","path":"./_file/data/day1/andhrapradesh_thali.a1d5ea39.json","lastModified":1711979260526});
+registerFile("./data/day1/delhi_thali.json", {"name":"./data/day1/delhi_thali.json","mimeType":"application/json","path":"./_file/data/day1/delhi_thali.c6c743d9.json","lastModified":1711974561178});
+registerFile("./data/day1/goa_thali.json", {"name":"./data/day1/goa_thali.json","mimeType":"application/json","path":"./_file/data/day1/goa_thali.06de01bd.json","lastModified":1711978151211});
+registerFile("./data/day1/gujarat_thali.json", {"name":"./data/day1/gujarat_thali.json","mimeType":"application/json","path":"./_file/data/day1/gujarat_thali.769611bb.json","lastModified":1711976791356});
+registerFile("./data/day1/karnataka_thali.json", {"name":"./data/day1/karnataka_thali.json","mimeType":"application/json","path":"./_file/data/day1/karnataka_thali.42e1abfa.json","lastModified":1711978412055});
+registerFile("./data/day1/kerala_thali.json", {"name":"./data/day1/kerala_thali.json","mimeType":"application/json","path":"./_file/data/day1/kerala_thali.828fc3ad.json","lastModified":1711979579122});
+registerFile("./data/day1/maharashtra_thali.json", {"name":"./data/day1/maharashtra_thali.json","mimeType":"application/json","path":"./_file/data/day1/maharashtra_thali.030d34e0.json","lastModified":1711977813416});
+registerFile("./data/day1/punjab_thali.json", {"name":"./data/day1/punjab_thali.json","mimeType":"application/json","path":"./_file/data/day1/punjab_thali.7ff5c9f5.json","lastModified":1711973897584});
+registerFile("./data/day1/rajasthan_thali.json", {"name":"./data/day1/rajasthan_thali.json","mimeType":"application/json","path":"./_file/data/day1/rajasthan_thali.6c72408d.json","lastModified":1711976322150});
+registerFile("./data/day1/tamilnadu_thali.json", {"name":"./data/day1/tamilnadu_thali.json","mimeType":"application/json","path":"./_file/data/day1/tamilnadu_thali.64e93769.json","lastModified":1711979118746});
+registerFile("./data/day1/uttarakhand_thali.json", {"name":"./data/day1/uttarakhand_thali.json","mimeType":"application/json","path":"./_file/data/day1/uttarakhand_thali.236f196a.json","lastModified":1711973492746});
+registerFile("./data/day1/uttarpradesh_thali.json", {"name":"./data/day1/uttarpradesh_thali.json","mimeType":"application/json","path":"./_file/data/day1/uttarpradesh_thali.78e588b8.json","lastModified":1711975350106});
+registerFile("./data/day1/westbengal_thali.json", {"name":"./data/day1/westbengal_thali.json","mimeType":"application/json","path":"./_file/data/day1/westbengal_thali.6c8a5c37.json","lastModified":1711976043335});
+
+define({id: "a49bff7a", inputs: ["Generators"], outputs: ["chartWidth","stateThali"], body: async (Generators) => {
+const {stateThali} = await import("./_import/components/day1/stateThali.0febd450.js");
+const chartWidth = Generators.width(document.querySelector(".card"));
+
+return {chartWidth,stateThali};
+}});
+
+define({id: "1101b2ed", inputs: ["FileAttachment"], outputs: ["delhiThali","punjabThali","uttarakhandThali","uttarpradeshThali","westbengalThali","andhrapradeshThali","tamilnaduThali","keralaThali","karnatakaThali","goaThali","maharashtraThali","gujaratThali","rajasthanThali"], body: (FileAttachment) => {
+const delhiThali = FileAttachment("./data/day1/delhi_thali.json").json();
+const punjabThali = FileAttachment("./data/day1/punjab_thali.json").json();
+const uttarakhandThali = FileAttachment("./data/day1/uttarakhand_thali.json").json();
+const uttarpradeshThali = FileAttachment("./data/day1/uttarpradesh_thali.json").json();
+const westbengalThali = FileAttachment("./data/day1/westbengal_thali.json").json();
+const andhrapradeshThali = FileAttachment("./data/day1/andhrapradesh_thali.json").json();
+const tamilnaduThali = FileAttachment("./data/day1/tamilnadu_thali.json").json();
+const keralaThali = FileAttachment("./data/day1/kerala_thali.json").json();
+const karnatakaThali = FileAttachment("./data/day1/karnataka_thali.json").json();
+const goaThali = FileAttachment("./data/day1/goa_thali.json").json();
+const maharashtraThali = FileAttachment("./data/day1/maharashtra_thali.json").json();
+const gujaratThali = FileAttachment("./data/day1/gujarat_thali.json").json();
+const rajasthanThali = FileAttachment("./data/day1/rajasthan_thali.json").json();
+return {delhiThali,punjabThali,uttarakhandThali,uttarpradeshThali,westbengalThali,andhrapradeshThali,tamilnaduThali,keralaThali,karnatakaThali,goaThali,maharashtraThali,gujaratThali,rajasthanThali};
+}});
+
+define({id: "95e955a5", inline: true, inputs: ["stateThali","punjabThali","chartWidth","display"], body: async (stateThali,punjabThali,chartWidth,display) => {
+display(await(
+stateThali(punjabThali, {width: chartWidth, height:45, chordOne:18, chordTwo:32})
+))
+}});
+
+define({id: "84f45fca", inline: true, inputs: ["stateThali","uttarakhandThali","chartWidth","display"], body: async (stateThali,uttarakhandThali,chartWidth,display) => {
+display(await(
+stateThali(uttarakhandThali, {width: chartWidth, height:45, chordOne:22, chordTwo:3})
+))
+}});
+
+define({id: "a985bb7b", inline: true, inputs: ["stateThali","delhiThali","chartWidth","display"], body: async (stateThali,delhiThali,chartWidth,display) => {
+display(await(
+stateThali(delhiThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "47c62629", inline: true, inputs: ["stateThali","uttarpradeshThali","chartWidth","display"], body: async (stateThali,uttarpradeshThali,chartWidth,display) => {
+display(await(
+stateThali(uttarpradeshThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "0b0973e9", inline: true, inputs: ["stateThali","westbengalThali","chartWidth","display"], body: async (stateThali,westbengalThali,chartWidth,display) => {
+display(await(
+stateThali(westbengalThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "4d699165", inline: true, inputs: ["stateThali","rajasthanThali","chartWidth","display"], body: async (stateThali,rajasthanThali,chartWidth,display) => {
+display(await(
+stateThali(rajasthanThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "26fb8e65", inline: true, inputs: ["stateThali","gujaratThali","chartWidth","display"], body: async (stateThali,gujaratThali,chartWidth,display) => {
+display(await(
+stateThali(gujaratThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "9d5f15ec", inline: true, inputs: ["stateThali","maharashtraThali","chartWidth","display"], body: async (stateThali,maharashtraThali,chartWidth,display) => {
+display(await(
+stateThali(maharashtraThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "c99ddc36", inline: true, inputs: ["stateThali","goaThali","chartWidth","display"], body: async (stateThali,goaThali,chartWidth,display) => {
+display(await(
+stateThali(goaThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "42b0626f", inline: true, inputs: ["stateThali","karnatakaThali","chartWidth","display"], body: async (stateThali,karnatakaThali,chartWidth,display) => {
+display(await(
+stateThali(karnatakaThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "94489b7d", inline: true, inputs: ["stateThali","tamilnaduThali","chartWidth","display"], body: async (stateThali,tamilnaduThali,chartWidth,display) => {
+display(await(
+stateThali(tamilnaduThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "1c81cf15", inline: true, inputs: ["stateThali","andhrapradeshThali","chartWidth","display"], body: async (stateThali,andhrapradeshThali,chartWidth,display) => {
+display(await(
+stateThali(andhrapradeshThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+define({id: "ef3597a3", inline: true, inputs: ["stateThali","keralaThali","chartWidth","display"], body: async (stateThali,keralaThali,chartWidth,display) => {
+display(await(
+stateThali(keralaThali, {width: chartWidth, height:45, chordOne:22, chordTwo:10})
+))
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">#30DayChartChallenge - 2024</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
+  <ol>
+    <details open class="observablehq-section-active">
+      <summary>Week 1 - Comparisons</summary>
+      <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./part-to-whole">Day 1 - Part to Whole</a></li>
+      </ol>
+    </details>
+  </ol>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type), h2:first-child, :not(h1) + h2">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#northern-india">Northern India</a></li>
+<li class="observablehq-secondary-link"><a href="#eastern-india">Eastern India</a></li>
+<li class="observablehq-secondary-link"><a href="#western-india">Western India</a></li>
+<li class="observablehq-secondary-link"><a href="#southern-india">Southern India</a></li>
+</ol>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="thalis-of-india" tabindex="-1"><a class="observablehq-header-anchor" href="#thalis-of-india">Thalis of India</a></h1>
+<p>Topic for day one, <strong>part-to-whole</strong> of #30DayChartChallenge. So here's a <strong>percentage chart</strong> <em>showing the values of vegetarian or non-vegetarian dishes</em> for each state or union territory visualizing each region's thali. <strong>Thali or Bhojanam is a round platter used to serve food in South Asia.</strong> Thali is also used to refer to an Indian-style meal made up of a selection of various dishes which are served on a platter.
+<br>
+<br></p>
+<div id="cell-a49bff7a" class="observablehq observablehq--block"></div>
+<div id="cell-1101b2ed" class="observablehq observablehq--block"></div>
+<h2 id="northern-india" tabindex="-1"><a class="observablehq-header-anchor" href="#northern-india">Northern India</a></h2>
+<hr>
+<div class="grid grid-cols-2">
+        <div class="card"><span id="cell-95e955a5" class="observablehq--loading"></span></div>
+        <div class="card"><span id="cell-84f45fca" class="observablehq--loading"></span></div>
+        <div class="card"><span id="cell-a985bb7b" class="observablehq--loading"></span></div>
+        <div class="card"><span id="cell-47c62629" class="observablehq--loading"></span></div>
+</div>
+<br>
+<h2 id="eastern-india" tabindex="-1"><a class="observablehq-header-anchor" href="#eastern-india">Eastern India</a></h2>
+<hr>
+<div class="grid grid-cols-1">
+    <div class="card"><span id="cell-0b0973e9" class="observablehq--loading"></span></div>  
+</div>
+<br>
+<h2 id="western-india" tabindex="-1"><a class="observablehq-header-anchor" href="#western-india">Western India</a></h2>
+<hr>
+<div class="grid grid-cols-2">
+    <div class="card"><span id="cell-4d699165" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-26fb8e65" class="observablehq--loading"></span></div>
+</div>
+<br>
+<h2 id="southern-india" tabindex="-1"><a class="observablehq-header-anchor" href="#southern-india">Southern India</a></h2>
+<hr>
+<div class="grid grid-cols-1">
+    <div class="card"><span id="cell-9d5f15ec" class="observablehq--loading"></span></div>
+</div>
+<div class="grid grid-cols-2">
+    <div class="card"><span id="cell-c99ddc36" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-42b0626f" class="observablehq--loading"></span></div>
+</div>
+<div class="grid grid-cols-2">
+    <div class="card"><span id="cell-94489b7d" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-1c81cf15" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-ef3597a3" class="observablehq--loading"></span></div>
+</div>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+    .card h2 {
+        font-weight: 550;
+        color: #4b5563;
+    }
+
+    .card tspan {
+        font-size: 11px;
+        font-weight: bold;
+    }
+</style>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./"><span>#30DayChartChallenge - 2024</span></a></nav>
+<div><a href="https://github.com/urmilaj" target="_blank" rel="noopener noreferrer">Urmila J</a> | Built with <a href="https://observablehq.com/framework/" target="_blank" rel="noopener noreferrer">Observable Framework</a> | 2024</div>
+</footer>
+</div>

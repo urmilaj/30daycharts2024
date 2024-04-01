@@ -1,0 +1,269 @@
+[
+    {
+        "state": "Maharashtra",
+        "description": "Maharashtrian cuisine includes a variety of dishes ranging from mild to very spicy ones.  All non-vegetarian and vegetarian dishes are eaten with boiled rice, chapatis or with bhakris, made of jowar, bajra or rice flours.",
+        "source": "https://www.youtube.com/watch?v=gOmi6K3GqZE&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=11",
+        "thalis": [
+            {
+                "thali_name": "Parsi Thali",
+                "served_on": "leaf",
+                "episode_num": 4,
+                "num_of_items": 11,
+                "num_of_veg": 2,
+                "num_of_nonveg": 9,
+                "dishes": [
+                    {
+                    "dish": "LAGAN NU ACHAAR",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "SARIYA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHICKEN FARCHA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BHARUCHI AKOORI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "TOPLI NU PANEER",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "RAVAIYA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KID GOSHT",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SAAS NI MACHI",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GOSHT, KEBAB AND EGG PULAO",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MASALA DAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "LAGAN NU CUSTARD",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Malwani Thali",
+                "served_on": "plate",
+                "episode_num": 4,
+                "num_of_items": 8,
+                "num_of_veg": 2,
+                "num_of_nonveg": 6,
+                "dishes": [
+                  {
+                    "dish": "KALYA WATANYACHI USAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                  },
+                  {
+                    "dish": "BANGDA TIKHLE",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                  },
+                  {
+                    "dish": "KULITH PEETHI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                  },
+                  {
+                    "dish": "SOLKADHI",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                  },
+                  {
+                    "dish": "SURMAI FRY",
+                    "classification": "Non-vegetarian",
+                    "role": "Side"
+                  },
+                  {
+                    "dish": "PRAWNS RICE",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                  },
+                  {
+                    "dish": "TISRYA MASALA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                  },
+                  {
+                    "dish": "CHICKEN SAGHOTI",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                  }
+                ]
+            },
+            {
+                "thali_name": "Kolhapuri Thali",
+                "served_on": "plate",
+                "episode_num": 3,
+                "num_of_items": 15,
+                "num_of_veg": 12,
+                "num_of_nonveg": 3,
+                "dishes": [
+                    {
+                    "dish": "LIMBU",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                    },
+                    {
+                    "dish": "KANDYACHI KOSHIMBIR",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "THECHA",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "BATATA VADA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "TAMDA RASSA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PANDHRA RASSA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SUKHA MUTTON",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BHARLI VANGI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "METHICHI BHAJI",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    },
+                    {
+                    "dish": "GOLYACHA PULAO",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BHAKRI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "POORAN POLI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "SHRIKHAND",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "BUTTER MILK",
+                    "classification": "Vegetarian",
+                    "role": "Beverage"
+                    },
+                    {
+                    "dish": "CURD",
+                    "classification": "Vegetarian",
+                    "role": "Side"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Pathare Prabhu Thali",
+                "served_on": "plate",
+                "episode_num": 3,
+                "num_of_items": 10,
+                "num_of_veg": 2,
+                "num_of_nonveg": 8,
+                "dishes": [
+                    {
+                    "dish": "BHUJANE POMFRET",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "ANANANNSA SAMBARAY",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHIMBORI KALVAN",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "PRAWNS KHADKHADLE",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "VANGA VATANA WITH PRAWN",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "TAZLYATLE MUTTON",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "METHI KE PANGOJI WITH PRAWNS",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "RICE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GURAGLI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "KAJU KI POLI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            }
+        ]
+    }
+]

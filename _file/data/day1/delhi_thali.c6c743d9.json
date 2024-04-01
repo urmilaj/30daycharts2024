@@ -1,0 +1,154 @@
+[
+    {
+        "state": "Delhi",
+        "description": "As India's national capital and centuries old Mughal capital, Delhi influenced the food habits of its residents and is where Mughlai cuisine originated.",
+        "source": "https://www.youtube.com/watch?v=w3ozFBr6PTs&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=15",
+        "thalis": [
+            {
+                "thali_name": "Baniya Thali",
+                "served_on": "plate",
+                "episode_num": 15,
+                "num_of_items": 14,
+                "num_of_veg": 14,
+                "num_of_nonveg": 0,
+                "dishes": [
+                    {
+                    "dish": "DUM ALOO",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "KHOYA MATAR MAKHANA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "MOOLI KE KOFTE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "DAHI SAUNTH GUJIA",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "JAVE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "BEDMI PURI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "AJWAIN PURI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "ARBI METHI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GHUTTI GOBHI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GUCCHI PULAO",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "IMARTI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "GUJIA",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "PISTA BARFI",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "GHIYE KI LODGE",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            },
+            {
+                "thali_name": "Mughlai Thali",
+                "served_on": "plate",
+                "episode_num": 15,
+                "num_of_items": 11,
+                "num_of_veg": 4,
+                "num_of_nonveg": 7,
+                "dishes": [
+                    {
+                    "dish": "ARHAR DAL",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SHAMI KEBAB",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SAAG KOFTE",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "LAMB KORMA",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "CHICKEN STEW",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "ALOO GOSHT",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "ARBI KA SALAN",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "YAKHNI PULAO",
+                    "classification": "Non-vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "SHEERMAL",
+                    "classification": "Vegetarian",
+                    "role": "Dessert"
+                    },
+                    {
+                    "dish": "TANDOORI ROTI",
+                    "classification": "Vegetarian",
+                    "role": "Main"
+                    },
+                    {
+                    "dish": "GOSHT HALWA",
+                    "classification": "Non-vegetarian",
+                    "role": "Dessert"
+                    }
+                ]
+            }
+        ]
+    }
+]

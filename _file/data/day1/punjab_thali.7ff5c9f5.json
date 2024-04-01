@@ -1,0 +1,159 @@
+[
+    {
+        "state": "Punjab",
+        "description": "Punjab is a state in northern India. Tandoori cooking is traditionally associated with Punjab. Dairy products are a staple in Punjabi cuisine.",
+        "source":"https://www.youtube.com/watch?v=D-cBjvf1MfQ&list=PL05nkCKsQfIWhr9lsxPc7yl0TnXPOXSu4&index=1",
+        "thalis": [
+          {
+            "thali_name": "Delhi Punjabi Thali",
+            "served_on": "plate",
+            "episode_num": 14,
+            "num_of_items": 10,
+            "num_of_veg": 8,
+            "num_of_nonveg": 2,
+            "dishes": [
+                {
+                  "dish": "Meat Curry",
+                  "classification": "Non-vegetarian",
+                  "role": "Main"
+                },
+                {
+                  "dish": "Sukha Rarah Murgh",
+                  "classification": "Non-vegetarian",
+                  "role": "Side"
+                },
+                {
+                  "dish": "Bharva Tinda",
+                  "classification": "Vegetarian",
+                  "role": "Side"
+                },
+                {
+                  "dish": "Maa Chole Ki Dal",
+                  "classification": "Vegetarian",
+                  "role": "Main"
+                },
+                {
+                  "dish": "Paneer Bhurji",
+                  "classification": "Vegetarian",
+                  "role": "Side"
+                },
+                {
+                  "dish": "Challi Ka Halwa",
+                  "classification": "Vegetarian",
+                  "role": "Dessert"
+                },
+                {
+                  "dish": "Lassi",
+                  "classification": "Vegetarian",
+                  "role": "Beverage"
+                },
+                {
+                  "dish": "Tandoori Roti",
+                  "classification": "Vegetarian",
+                  "role": "Main"
+                },
+                {
+                  "dish": "Salad",
+                  "classification": "Vegetarian",
+                  "role": "Side"
+                },
+                {
+                  "dish": "Pappad",
+                  "classification": "Vegetarian",
+                  "role": "Side"
+                }
+              ]              
+          },
+          {
+            "thali_name": "Amritsari Punjabi Thali",
+            "served_on": "plate",
+            "episode_num": 14,
+            "num_of_items": 16,
+            "num_of_veg": 9,
+            "num_of_nonveg": 7,
+            "dishes": [
+                {
+                "dish": "ALOO KULCHA",
+                "classification": "Vegetarian",
+                "role": "Main"
+                },
+                {
+                "dish": "MISSI ROTI",
+                "classification": "Vegetarian",
+                "role": "Main"
+                },
+                {
+                "dish": "MAKAI KI ROTI",
+                "classification": "Vegetarian",
+                "role": "Main"
+                },
+                {
+                "dish": "SARSON KA SAAG",
+                "classification": "Vegetarian",
+                "role": "Main"
+                },
+                {
+                "dish": "MAH MAKHANI",
+                "classification": "Vegetarian",
+                "role": "Main"
+                },
+                {
+                "dish": "ALOO GOBI",
+                "classification": "Vegetarian",
+                "role": "Side"
+                },
+                {
+                "dish": "PUNJABI CHOLE",
+                "classification": "Vegetarian",
+                "role": "Side"
+                },
+                {
+                "dish": "KHEER",
+                "classification": "Vegetarian",
+                "role": "Beverage"
+                },
+                {
+                "dish": "ATTE KA HALWA",
+                "classification": "Vegetarian",
+                "role": "Dessert"
+                },
+                {
+                "dish": "BATTI KA CHICKEN",
+                "classification": "Non-vegetarian",
+                "role": "Main"
+                },
+                {
+                "dish": "BUTTER CHICKEN",
+                "classification": "Non-vegetarian",
+                "role": "Main"
+                },
+                {
+                "dish": "KEEMA KALEJI",
+                "classification": "Non-vegetarian",
+                "role": "Main"
+                },
+                {
+                "dish": "MASALA CHAACH",
+                "classification": "Vegetarian",
+                "role": "Beverage"
+                },
+                {
+                "dish": "MANGO PICKLE",
+                "classification": "Vegetarian",
+                "role": "Side"
+                },
+                {
+                "dish": "GREEN CHILLIES PICKLE",
+                "classification": "Vegetarian",
+                "role": "Side"
+                },
+                {
+                "dish": "TYAUN PICKLE",
+                "classification": "Vegetarian",
+                "role": "Side"
+                }
+            ]
+          }
+        ]
+    }
+]
