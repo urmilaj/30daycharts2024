@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Neo | #30DayChartChallenge - 2024</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_import/components/day2/phylo.e17ba03d.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+import {registerFile} from "./_observablehq/stdlib.js";
+
+registerFile("./data/day2/birdGenusNeo.csv", {"name":"./data/day2/birdGenusNeo.csv","mimeType":"text/csv","path":"./_file/data/day2/birdGenusNeo.07981f08.csv","lastModified":1712399893576});
+
+define({id: "9a61b534", inputs: ["FileAttachment"], outputs: ["birdGenusNeo"], body: (FileAttachment) => {
+const birdGenusNeo = FileAttachment("./data/day2/birdGenusNeo.csv").csv();
+return {birdGenusNeo};
+}});
+
+define({id: "26646237", inputs: ["d3","birdGenusNeo","width"], outputs: ["conservation_group","colorCategory","vxScale","vyScale","hxScale","hyScale"], body: (d3,birdGenusNeo,width) => {
+const conservation_group = d3.group(birdGenusNeo, d=>d.conservation_status);
+const colorCategory = d3.scaleOrdinal().domain(['Lower Risk','Threatened']).range(['#FFAE6D','#C63D2F']);
+const vxScale = d3.scaleBand().domain([...conservation_group.keys()]).range([0, width-50]).padding(0.25)
+const vyScale = d3.scaleLinear().domain([0, 60]).range([300, 0])
+const hxScale = d3.scaleLinear().domain([0, 60]).range([0, width-130])
+const hyScale = d3.scaleBand().domain([...conservation_group.keys()]).range([400, 0]).padding(0.25)
+return {conservation_group,colorCategory,vxScale,vyScale,hxScale,hyScale};
+}});
+
+define({id: "590fef53", inputs: ["width","svg","vyScale","conservation_group","vxScale","colorCategory","hxScale","hyScale","display"], body: async (width,svg,vyScale,conservation_group,vxScale,colorCategory,hxScale,hyScale,display) => {
+display(await(
+width > 750 ? svg`<svg width="${width}" height="350">
+    <g transform="translate(30,10)">
+        ${[0, 10, 20, 30, 40, 50].map(d=>svg`
+        <text x='0' y='${vyScale(d)}' dy='3' text-anchor='end' font-size='12'>${d}</text>
+        <line/ x1='10' y1='${vyScale(d)}' x2='${width-80}' y2='${vyScale(d)}' stroke='gray' stroke-dasharray='2 2' opacity='0.5'>`)}
+        ${[...conservation_group].map(d=>svg`
+        <rect x='${vxScale(d[0])}' y='${vyScale(d[1].length)}' width='${vxScale.bandwidth()}' height='${300-vyScale(d[1].length)}' fill='${colorCategory    (d[1][0].category)}'/>
+        <text x='${vxScale(d[0])+vxScale.bandwidth()/2}' y='320' text-anchor='middle' font-size='14'>${d[0]}</text>
+        <text x='${vxScale(d[0])+vxScale.bandwidth()/2}' y='${vyScale(d[1].length)}' dy=-5 text-anchor='middle' font-weight='bold'>${d[1].length}</text>
+        `)}
+        <line x1='${vxScale('Critically Endangered')+vxScale.bandwidth()+25}' y1='10' x2='${vxScale('Critically Endangered')+vxScale.bandwidth()+25}' y2='300' stroke='black' stroke-width='1.5'/>
+        <text text-anchor='end' font-size='14' font-weight='bold' fill='${colorCategory('Threatened')}'>
+            <tspan x='${vxScale('Critically Endangered')+vxScale.bandwidth()+25}' y='20' dx='-10'>&#x2190; Threatened</tspan>
+            <tspan x='${vxScale('Critically Endangered')+vxScale.bandwidth()+25}' y='35' dx='-16'>Species</tspan>
+        </text>
+        <text text-anchor='start' font-size='14' font-weight='bold' fill='${colorCategory('Lower Risk')}'>
+            <tspan x='${vxScale('Critically Endangered')+vxScale.bandwidth()+25}' dx='15' y='20'>Lower Risk &#x2192;</tspan>
+            <tspan x='${vxScale('Critically Endangered')+vxScale.bandwidth()+25}' dx='13' y='35'>Species</tspan>
+        </text>
+    </g>
+</svg>` : 
+svg`<svg width={width} height="450">
+    <g transform="translate(150,25)">
+        ${[0, 10, 20, 30, 40, 50].map(d=>svg`
+        <text x='${hxScale(d)}' y='0' dy='3' text-anchor='middle' font-size='12'>${d}</text>
+        <line/ x1='${hxScale(d)}' y1='10' x2='${hxScale(d)}' y2='400' stroke='gray' stroke-dasharray='2 2' opacity='0.5'>`)}
+        ${[...conservation_group].map(d=>svg`
+        <rect x='0' y='${hyScale(d[0])}' width='${hxScale(d[1].length)}' height='${hyScale.bandwidth()}' fill='${colorCategory(d[1][0].category)}'/>
+        <text x='0' y='${hyScale(d[0])+hyScale.bandwidth()/2}' dx='-10' text-anchor='end' font-size='14'>${d[0]}</text>
+        <text x='${hxScale(d[1].length)}' y='${hyScale(d[0])+hyScale.bandwidth()/2}' dx='5' text-anchor='start' font-weight='bold'>${d[1].length}</text>
+        `)}
+        <line x1='0' y1='${hyScale('Critically Endangered')-8}' x2='${width-180}' y2='${hyScale('Critically Endangered')-8}' stroke='black' stroke-width='1.5'/>
+        <text text-anchor='start' font-size='14' font-weight='bold' fill='${colorCategory('Lower Risk')}'>
+            <tspan x="${width-175}" y="${hyScale('Critically Endangered')-18}" dy="-20" text-anchor="end">&#x2191;</tspan>
+            <tspan x="${width-180}" y="${hyScale('Critically Endangered')-18}" text-anchor="end">Lower Risk Species</tspan>
+        </text>
+        <text text-anchor='start' font-size='14' font-weight='bold' fill='${colorCategory('Threatened')}'>
+            <tspan x="${width-175}" y="${hyScale('Critically Endangered')+18}" text-anchor="end">Threatened Species</tspan>
+            <tspan x="${width-180}" y="${hyScale('Critically Endangered')+18}" dy="20" text-anchor="end">&#x2193;</tspan>
+        </text>
+    </g>
+</svg>`
+))
+}});
+
+define({id: "868e4225", inputs: ["Generators","d3","birdGenusNeo"], outputs: ["createPhyloTree","getNeoSpecies","chartWidth","phyloOrderGroup","phyloGroup","phyloOrder","node","tree"], body: async (Generators,d3,birdGenusNeo) => {
+const {createPhyloTree, getNeoSpecies} = await import("./_import/components/day2/phylo.e17ba03d.js");
+
+const chartWidth = Generators.width(document.querySelector(".card"));
+
+const phyloOrderGroup = d3.group(birdGenusNeo, d=>d.order_name, d=>d.family_name, d=>d.species_name);
+
+const phyloGroup = d3.group(birdGenusNeo, d=>d.class_name, d=>d.order_name, d=>d.family_name,d=>d.species_name);
+
+const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
+
+
+const node = d3.hierarchy(phyloGroup);
+
+const tree = d3.tree().size([700,500])(node);
+return {createPhyloTree,getNeoSpecies,chartWidth,phyloOrderGroup,phyloGroup,phyloOrder,node,tree};
+}});
+
+define({id: "f3bc36e4", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
+display(await(
+createPhyloTree(phyloOrderGroup.get("Otidiformes"), chartWidth, 300, 'horizontal')
+))
+}});
+
+define({id: "a3944b3c", inline: true, inputs: ["getNeoSpecies","phyloOrder","display"], body: async (getNeoSpecies,phyloOrder,display) => {
+display(await(
+getNeoSpecies(phyloOrder.get("Otidiformes"))
+))
+}});
+
+define({id: "6a50cdb4", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
+display(await(
+createPhyloTree(phyloOrderGroup.get("Cuculiformes"), chartWidth, 300, 'horizontal')
+))
+}});
+
+define({id: "1460b628", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
+display(await(
+createPhyloTree(phyloOrderGroup.get("Accipitriformes"), chartWidth, 100, 'horizontal')
+))
+}});
+
+define({id: "f2160c6e", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
+display(await(
+createPhyloTree(phyloOrderGroup.get("Falconiformes"), chartWidth, 100, 'horizontal')
+))
+}});
+
+define({id: "346c5f1c", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
+display(await(
+createPhyloTree(phyloOrderGroup.get("Psittaciformes"), chartWidth, 400, 'horizontal')
+))
+}});
+
+define({id: "e84af6e5", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
+display(await(
+createPhyloTree(phyloOrderGroup.get("Passeriformes"), chartWidth, 800, 'horizontal')
+))
+}});
+
+define({id: "e68e4090", inputs: ["tree","d3"], outputs: ["test","link"], body: (tree,d3) => {
+const test = tree.links().slice(1)
+
+const link = d3.link(d3.curveStep).source(d=>[d.source.y, d.source.x]).target(d=>[d.target.y, d.target.x])
+return {test,link};
+}});
+
+define({id: "fd7c6d7b", inputs: ["phyloOrder","display"], body: async (phyloOrder,display) => {
+display(await(
+// tree.descendants()
+// tree.links().slice(
+    phyloOrder.get("Otidiformes")
+// phyloOrderGroup.get("Otidiformes")
+))
+}});
+
+define({id: "f5b13378", inputs: ["svg","width","test","link","tree","display"], body: async (svg,width,test,link,tree,display) => {
+display(await(
+svg`<svg width=${width} height="750" style="background-color: lightblue;">
+    <g transform="translate(25,25)">
+        ${test.map(d=>svg`<path d="${link(d)}" fill="none" stroke="black" stroke-width=2/>`)}
+        ${tree.descendants().map(d=>svg`<text x="${d.y}" y="${d.x}" text-anchor="${d.depth<3?'end':'start'}">${d.data[0]}</text>`)}
+    </g>
+</svg>`
+))
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">#30DayChartChallenge - 2024</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
+  <ol>
+    <details open class="observablehq-section-active">
+      <summary>Week 1 - Comparisons</summary>
+      <ol>
+    <li class="observablehq-link"><a href="./part-to-whole">Day 1 - Part to Whole</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./neo">Day 2 - Neo</a></li>
+      </ol>
+    </details>
+  </ol>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type), h2:first-child, :not(h1) + h2">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#iucn-risk-category">IUCN Risk Category</a></li>
+<li class="observablehq-secondary-link"><a href="#aves-phylogenentic-tree">Aves Phylogenentic Tree</a></li>
+</ol>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="conservation-status-of-birds" tabindex="-1"><a class="observablehq-header-anchor" href="#conservation-status-of-birds">Conservation status of birds</a></h1>
+<p>Topic for day two, <strong>neo</strong> of #30DayChartChallenge. Exploring <em>Birds of the World Taxonomy list</em> who's <strong>species names begin with the word Neo.</strong></p>
+<p><a href="https://birdsoftheworld.org/bow/specieslist" target="_blank" rel="noopener noreferrer">Data Source: Full Species List - <em>The Cornell Lab of Ornithology</em> | Birds of the World</a></p>
+<br>
+<h2 id="iucn-risk-category" tabindex="-1"><a class="observablehq-header-anchor" href="#iucn-risk-category">IUCN Risk Category</a></h2>
+<hr>
+<p>There are <strong>46</strong> bird species beginning with the name <strong>Neo</strong> belonging to various different phylogenetic orders that are categorised as <span class="iucn_category" style="background-color: #C63D2F;">Threatened Species</span> - <em>which is vulnerable to extinction in the near future</em> <strong>or</strong><br> <span class="iucn_category" style="background-color: #FFAE6D;">Lower Risk Species</span> - <em>with populations levels high enough to ensure its survival.</em></p>
+<!-- Barchart begins -->
+<div id="cell-9a61b534" class="observablehq observablehq--block"></div>
+<div id="cell-26646237" class="observablehq observablehq--block"></div>
+<div id="cell-590fef53" class="observablehq observablehq--block observablehq--loading"></div>
+<!-- Barchart ends -->
+<p><br><br></p>
+<h2 id="aves-phylogenentic-tree" tabindex="-1"><a class="observablehq-header-anchor" href="#aves-phylogenentic-tree">Aves Phylogenentic Tree</a></h2>
+<p>Below are the bird orders that belong to class Aves - the families that belong to that order and various birds whose <strong>genus and species names</strong> that begin with <strong>neo</strong>.</p>
+<hr>
+<div id="cell-868e4225" class="observablehq observablehq--block"></div>
+<div class="card">
+    <b style="font-size:1.2rem;">Otidiformes - </b><b><i>Bustards</i></b>, are large, terrestrial birds living mainly in dry grassland areas.
+    <br><br>
+    <div><span id="cell-f3bc36e4" class="observablehq--loading"></span></div>
+    <br>
+    <img width="100" height="100" src="./_file/data/day2/images/Ludwig'sBustard.f2c8c573.jpg">
+    <div><span id="cell-a3944b3c" class="observablehq--loading"></span></div>
+</div>
+<div class="card">
+    <b style="font-size:1.2rem;">Cuculiformes - </b><b><i>Cuckoos and Roadrunners</i></b>, small- to medium-sized birds.
+    <br><br>
+    <div><span id="cell-6a50cdb4" class="observablehq--loading"></span></div>
+</div>
+<div class="card">
+    <b style="font-size:1.2rem;">Accipitriformess - </b><b><i>hawks, eagles, vultures, and kites</i></b>, an order of birds that includes most of the diurnal birds of prey but not falcons.
+    <br><br>
+    <div><span id="cell-1460b628" class="observablehq--loading"></span></div>
+</div>
+<div class="card">
+    <b style="font-size:1.2rem;">Falconiformes - </b><b><i>falcons and caracaras</i></b>, strong flyers and carnivores.
+    <br><br>
+    <div><span id="cell-f2160c6e" class="observablehq--loading"></span></div>
+</div>
+<div class="card">
+    <b style="font-size:1.2rem;">Psittaciformes - </b> <b><i>parrots</i></b>, found mostly in tropical and subtropical regions.
+    <br><br>
+    <div><span id="cell-346c5f1c" class="observablehq--loading"></span></div>
+</div>
+<div class="card">
+    <b style="font-size:1.2rem;">Passeriformes - </b> <b><i>passerine</i></b>, includes more than half of all bird species. Sometimes known as perching birds, passerines generally have an anisodactyl arrangement of their toes, which facilitates perching.
+    <br><br>
+    <div><span id="cell-e84af6e5" class="observablehq--loading"></span></div>
+</div>
+<div id="cell-e68e4090" class="observablehq observablehq--block"></div>
+<div id="cell-fd7c6d7b" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-f5b13378" class="observablehq observablehq--block observablehq--loading"></div>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+    text {
+        font-family: sans-serif;
+    }
+
+    /* svg {
+        background-color: #fafafa;
+    } */
+
+    .iucn_category {
+        border-radius: 2.5px;
+        padding: 1.3px;
+        color:white;
+        font-weight: bold;
+    }
+
+    .card h2 {
+        font-weight:bold;
+        font-size:1.2rem;
+    }
+
+    img {
+        border-radius: 50%;
+    }
+</style></main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./part-to-whole"><span>Day 1 - Part to Whole</span></a></nav>
+<div><a href="https://github.com/urmilaj" target="_blank" rel="noopener noreferrer">Urmila J</a> | Built with <a href="https://observablehq.com/framework/" target="_blank" rel="noopener noreferrer">Observable Framework</a> | 2024</div>
+</footer>
+</div>

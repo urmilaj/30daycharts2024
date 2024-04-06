@@ -11,7 +11,7 @@ export default {
       name: "Week 1 - Comparisons",
       pages: [
         {name: "Day 1 - Part to Whole", path: "/part-to-whole"},
-        // {name: "Day 2 - Neo", path: ""},
+        {name: "Day 2 - Neo", path: "/neo"},
         // {name: "Day 3 - Makeover", path: ""},
         // {name: "Day 4 - Waffle", path: ""},
         // {name: "Day 5 - Diverging", path: ""},
