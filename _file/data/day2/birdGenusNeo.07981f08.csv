@@ -1,0 +1,47 @@
+class_name,order_name,family_name,species_name,common_name,conservation_status,category
+Aves,Otidiformes,Otididae,Neotis ludwigii,Ludwig's Bustard,Endangered,Threatened
+Aves,Cuculiformes,Cuculidae,Neomorphus geoffroyi,Rufous-vented Ground-Cuckoo,Vulnerable,Threatened
+Aves,Cuculiformes,Cuculidae,Neomorphus radiolosus,Banded Ground-Cuckoo,Endangered,Threatened
+Aves,Accipitriformes,Accipitridae,Neophron percnopterus,Egyptian Vulture,Endangered,Threatened
+Aves,Psittaciformes,Psittaculidae,Neophema chrysostoma,Blue-winged Parrot,Vulnerable,Threatened
+Aves,Psittaciformes,Psittaculidae,Neophema chrysogaster,Orange-bellied Parrot,Critically Endangered,Threatened
+Aves,Passeriformes,Philepittidae,Neodrepanis hypoxantha,Yellow-bellied Sunbird-Asity,Vulnerable,Threatened
+Aves,Otidiformes,Otididae,Neotis denhami,Denham's Bustard,Near Threatened,Lower Risk
+Aves,Otidiformes,Otididae,Neotis heuglinii,Heuglin's Bustard,Least Concern,Lower Risk
+Aves,Otidiformes,Otididae,Neotis nuba,Nubian Bustard,Near Threatened,Lower Risk
+Aves,Cuculiformes,Cuculidae,Neomorphus squamiger,Scaled Ground-Cuckoo,Near Threatened,Lower Risk
+Aves,Cuculiformes,Cuculidae,Neomorphus rufipennis,Rufous-winged Ground-Cuckoo,Least Concern,Lower Risk
+Aves,Cuculiformes,Cuculidae,Neomorphus pucheranii,Red-billed Ground-Cuckoo,Least Concern,Lower Risk
+Aves,Falconiformes,Falconidae,Neohierax insignis,White-rumped Falcon,Near Threatened,Lower Risk
+Aves,Psittaciformes,Psittaculidae,Neophema bourkii,Bourke's Parrot,Least Concern,Lower Risk
+Aves,Psittaciformes,Psittaculidae,Neophema elegans,Elegant Parrot,Least Concern,Lower Risk
+Aves,Psittaciformes,Psittaculidae,Neophema petrophila,Rock Parrot,Least Concern,Lower Risk
+Aves,Psittaciformes,Psittaculidae,Neophema pulchella,Turquoise Parrot,Least Concern,Lower Risk
+Aves,Psittaciformes,Psittaculidae,Neophema splendida,Scarlet-chested Parrot,Least Concern,Lower Risk
+Aves,Psittaciformes,Psittaculidae,Neopsittacus musschenbroekii,Yellow-billed Lorikeet,Least Concern,Lower Risk
+Aves,Psittaciformes,Psittaculidae,Neopsittacus pullicauda,Orange-billed Lorikeet,Least Concern,Lower Risk
+Aves,Passeriformes,Philepittidae,Neodrepanis coruscans,Common Sunbird-Asity,Least Concern,Lower Risk
+Aves,Passeriformes,Thamnophilidae,Neoctantes niger,Black Bushbird,Least Concern,Lower Risk
+Aves,Passeriformes,Pipridae,Neopelma pallescens,Pale-bellied Tyrant-Manakin,Least Concern,Lower Risk
+Aves,Passeriformes,Pipridae,Neopelma chrysocephalum,Saffron-crested Tyrant-Manakin,Least Concern,Lower Risk
+Aves,Passeriformes,Pipridae,Neopelma aurifrons,Wied's Tyrant-Manakin,Near Threatened,Lower Risk
+Aves,Passeriformes,Pipridae,Neopelma chrysolophum,Serra do Mar Tyrant-Manakin,Least Concern,Lower Risk
+Aves,Passeriformes,Pipridae,Neopelma sulphureiventer,Sulphur-bellied Tyrant-Manakin,Least Concern,Lower Risk
+Aves,Passeriformes,Tyrannidae,Neopipo cinnamomea,Cinnamon Manakin-Tyrant,Least Concern,Lower Risk
+Aves,Passeriformes,Tyrannidae,Neoxolmis coronatus,Black-crowned Monjita,Least Concern,Lower Risk
+Aves,Passeriformes,Tyrannidae,Neoxolmis salinarum,Salinas Monjita,Least Concern,Lower Risk
+Aves,Passeriformes,Tyrannidae,Neoxolmis rubetra,Rusty-backed Monjita,Least Concern,Lower Risk
+Aves,Passeriformes,Tyrannidae,Neoxolmis rufiventris,Chocolate-vented Tyrant,Least Concern,Lower Risk
+Aves,Passeriformes,Acanthizidae,Neosericornis citreogularis,Yellow-throated Scrubwren,Least Concern,Lower Risk
+Aves,Passeriformes,Monarchidae,Neolalage banksiana,Buff-bellied Monarch,Least Concern,Lower Risk
+Aves,Passeriformes,Cisticolidae,Neomixis tenella,Common Jery,Least Concern,Lower Risk
+Aves,Passeriformes,Cisticolidae,Neomixis viridis,Green Jery,Least Concern,Lower Risk
+Aves,Passeriformes,Cisticolidae,Neomixis striatigula,Stripe-throated Jery,Least Concern,Lower Risk
+Aves,Passeriformes,Hirundinidae,Neophedina cincta,Banded Martin,Least Concern,Lower Risk
+Aves,Passeriformes,Pycnonotidae,Neolestes torquatus,Black-collared Bulbul,Least Concern,Lower Risk
+Aves,Passeriformes,Sturnidae,Neocichla gutturalis,Babbling Starling,Least Concern,Lower Risk
+Aves,Passeriformes,Turdidae,Neocossyphus rufus,Red-tailed Ant-Thrush,Least Concern,Lower Risk
+Aves,Passeriformes,Turdidae,Neocossyphus poensis,White-tailed Ant-Thrush,Least Concern,Lower Risk
+Aves,Passeriformes,Estrildidae,Neochmia phaeton,Crimson Finch,Least Concern,Lower Risk
+Aves,Passeriformes,Estrildidae,Neochmia temporalis,Red-browed Firetail,Least Concern,Lower Risk
+Aves,Passeriformes,Thraupidae,Neothraupis fasciata,White-banded Tanager,Near Threatened,Lower Risk
