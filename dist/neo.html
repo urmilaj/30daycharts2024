@@ -10,7 +10,7 @@
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
-<link rel="modulepreload" href="./_import/components/day2/phylo.468d323f.js">
+<link rel="modulepreload" href="./_import/components/day2/phylo.2e69aa60.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
@@ -51,7 +51,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/day2/birdGenusNeo.csv", {"name":"./data/day2/birdGenusNeo.csv","mimeType":"text/csv","path":"./_file/data/day2/birdGenusNeo.915c47b6.csv","lastModified":1712430509005});
+registerFile("./data/day2/birdGenusNeo.csv", {"name":"./data/day2/birdGenusNeo.csv","mimeType":"text/csv","path":"./_file/data/day2/birdGenusNeo.915c47b6.csv","lastModified":1712479678461});
 
 define({id: "9a61b534", inputs: ["FileAttachment"], outputs: ["birdGenusNeo"], body: (FileAttachment) => {
 const birdGenusNeo = FileAttachment("./data/day2/birdGenusNeo.csv").csv();
@@ -116,7 +116,7 @@ svg`<svg width={width} height="450">
 }});
 
 define({id: "b62c4464", inputs: ["Generators","d3","birdGenusNeo"], outputs: ["createPhyloTree","getNeoSpecies","chartWidth","phyloOrderGroup","phyloOrder"], body: async (Generators,d3,birdGenusNeo) => {
-const {createPhyloTree, getNeoSpecies} = await import("./_import/components/day2/phylo.468d323f.js");
+const {createPhyloTree, getNeoSpecies} = await import("./_import/components/day2/phylo.2e69aa60.js");
 
 const chartWidth = Generators.width(document.querySelector(".card"));
 
