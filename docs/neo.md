@@ -93,14 +93,7 @@ const chartWidth = Generators.width(document.querySelector(".card"));
 
 const phyloOrderGroup = d3.group(birdGenusNeo, d=>d.order_name, d=>d.family_name, d=>d.species_name);
 
-const phyloGroup = d3.group(birdGenusNeo, d=>d.class_name, d=>d.order_name, d=>d.family_name,d=>d.species_name);
-
 const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
-
-
-const node = d3.hierarchy(phyloGroup);
-
-const tree = d3.tree().size([700,500])(node);
 ```
 
 <div class="card">
@@ -108,7 +101,6 @@ const tree = d3.tree().size([700,500])(node);
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Otidiformes"), chartWidth, 300, 'horizontal')}</div>
     <br>
-    <img width="100" height="100" src="./data/day2/images/Ludwig&apos;sBustard.jpg">
     <div>${getNeoSpecies(phyloOrder.get("Otidiformes"))}</div>
 </div>
 
@@ -116,59 +108,41 @@ const tree = d3.tree().size([700,500])(node);
     <b style="font-size:1.2rem;">Cuculiformes - </b><b><i>Cuckoos and Roadrunners</i></b>, small- to medium-sized birds.
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Cuculiformes"), chartWidth, 300, 'horizontal')}</div>
+    <br>
+    <div>${getNeoSpecies(phyloOrder.get("Cuculiformes"))}</div>
 </div>
 
 <div class="card">
     <b style="font-size:1.2rem;">Accipitriformess - </b><b><i>hawks, eagles, vultures, and kites</i></b>, an order of birds that includes most of the diurnal birds of prey but not falcons.
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Accipitriformes"), chartWidth, 100, 'horizontal')}</div>
+    <br>
+    <div>${getNeoSpecies(phyloOrder.get("Accipitriformes"))}</div>   
 </div>
 
 <div class="card">
     <b style="font-size:1.2rem;">Falconiformes - </b><b><i>falcons and caracaras</i></b>, strong flyers and carnivores.
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Falconiformes"), chartWidth, 100, 'horizontal')}</div>
+    <br>
+    <div>${getNeoSpecies(phyloOrder.get("Falconiformes"))}</div>
 </div>
 
 <div class="card">
     <b style="font-size:1.2rem;">Psittaciformes - </b> </b><b><i>parrots</i></b>, found mostly in tropical and subtropical regions.
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Psittaciformes"), chartWidth, 400, 'horizontal')}</div>
+    <br>
+    <div>${getNeoSpecies(phyloOrder.get("Psittaciformes"))}</div>
 </div>
 
 <div class="card">
     <b style="font-size:1.2rem;">Passeriformes - </b> </b><b><i>passerine</i></b>, includes more than half of all bird species. Sometimes known as perching birds, passerines generally have an anisodactyl arrangement of their toes, which facilitates perching.
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Passeriformes"), chartWidth, 800, 'horizontal')}</div>
+    <br>
+    <div>${getNeoSpecies(phyloOrder.get("Passeriformes"))}</div>
 </div>
-
-
-
-```js
-const test = tree.links().slice(1)
-
-const link = d3.link(d3.curveStep).source(d=>[d.source.y, d.source.x]).target(d=>[d.target.y, d.target.x])
-```
-
-```js
-// tree.descendants()
-// tree.links().slice(
-    phyloOrder.get("Otidiformes")
-// phyloOrderGroup.get("Otidiformes")
-```
-
-```js
-svg`<svg width=${width} height="750" style="background-color: lightblue;">
-    <g transform="translate(25,25)">
-        ${test.map(d=>svg`<path d="${link(d)}" fill="none" stroke="black" stroke-width=2/>`)}
-        ${tree.descendants().map(d=>svg`<text x="${d.y}" y="${d.x}" text-anchor="${d.depth<3?'end':'start'}">${d.data[0]}</text>`)}
-    </g>
-</svg>`
-```
-
-
-
-
 
 <style>
     * {
@@ -178,10 +152,6 @@ svg`<svg width=${width} height="750" style="background-color: lightblue;">
     text {
         font-family: sans-serif;
     }
-
-    /* svg {
-        background-color: #fafafa;
-    } */
 
     .iucn_category {
         border-radius: 2.5px;
@@ -196,6 +166,6 @@ svg`<svg width=${width} height="750" style="background-color: lightblue;">
     }
 
     img {
-        border-radius: 50%;
+        border-radius: 10%;
     }
 </style>

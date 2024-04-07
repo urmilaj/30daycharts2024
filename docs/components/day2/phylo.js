@@ -1,6 +1,5 @@
 import * as htl from "npm:htl";
 import * as d3 from "npm:d3";
-import {FileAttachment} from "npm:@observablehq/stdlib";
 
 const colorCategory = d3.scaleOrdinal().domain(['Lower Risk','Threatened']).range(['#FFAE6D','#C63D2F']);
 
@@ -40,12 +39,17 @@ export function createPhyloTree(phyloData, chartWidth, chartHeight, direction) {
 }
 
 export function getNeoSpecies(species) {
-    return species.map(d => {
-        return htl.html`
-            <span>${d.common_name}</span>
-            <img width="80" height="80" src="./_file/data/day2/images/${d.common_name.replace(/\s/g, '')}.jpg"/>
+    return htl.html`<div class="grid grid-cols-3">${species.map(d => {
+        return htl.html`<div style="display: flex; align-items:flex-start; margin: 10px;">
+            <img width="40" height="40" style="border: solid 2px ${colorCategory(d.category)};" src="./_file/data/day2/images/${d.common_name.replace(/\s/g, '')}.jpg"/>
+            <div style="padding: 0px 0px 0px 10px; align-self: flex-start;">
+                <span style="font-size: 18px;">${d.common_name}</span>
+                <span style="display:inline-block; background-color: ${colorCategory(d.category)}; color:white; padding:1px 3px; border-radius:2px; font-weight: bold; font-size:14px;">${d.species_name}</span>
+                <br>
+                <span>This bird is <b>${d.conservation_status.toLowerCase()}</b>.</span>
+            </div>
             <br>
-        `
-    })
+        </div>`
+    })}</div>`
 }
 
