@@ -1,6 +1,5 @@
 import * as htl from "../../../_npm/htl@0.3.1/_esm.js";
 import * as d3 from "../../../_npm/d3@7.9.0/_esm.js";
-import {FileAttachment} from "../../../_observablehq/stdlib.js";
 
 const colorCategory = d3.scaleOrdinal().domain(['Lower Risk','Threatened']).range(['#FFAE6D','#C63D2F']);
 
@@ -40,11 +39,17 @@ export function createPhyloTree(phyloData, chartWidth, chartHeight, direction) {
 }
 
 export function getNeoSpecies(species) {
-    return species.map(d => {
-        return htl.html`
-            <span>${d.common_name}</span>
-            <img width="100" height="100" src="./_file/data/day2/images/Ludwig'sBustard.jpg"/>
-        `
-    })
+    return htl.html`<div class="grid grid-cols-3">${species.map(d => {
+        return htl.html`<div style="display: flex; align-items:flex-start; margin: 10px;">
+            <img width="40" height="40" style="border: solid 2px ${colorCategory(d.category)};" src="./_file/data/day2/images/${d.common_name.replace(/\s/g, '')}.jpg"/>
+            <div style="padding: 0px 0px 0px 10px; align-self: flex-start;">
+                <span style="font-size: 18px;">${d.common_name}</span>
+                <span style="display:inline-block; background-color: ${colorCategory(d.category)}; color:white; padding:1px 3px; border-radius:2px; font-weight: bold; font-size:14px;">${d.species_name}</span>
+                <br>
+                <span>This bird is <b>${d.conservation_status.toLowerCase()}</b>.</span>
+            </div>
+            <br>
+        </div>`
+    })}</div>`
 }
 
