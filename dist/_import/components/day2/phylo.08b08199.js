@@ -38,10 +38,14 @@ export function createPhyloTree(phyloData, chartWidth, chartHeight, direction) {
     </svg>`
 }
 
-export function getNeoSpecies(species) {
+const getImgUrl = (name) =>{
+    return name[0].link
+}
+
+export function getNeoSpecies(species, imgData) {
     return htl.html`<div class="grid grid-cols-3">${species.map(d => {
         return htl.html`<div style="display: flex; align-items:flex-start; margin: 10px;">
-            <img width="40" height="40" style="border: solid 2px ${colorCategory(d.category)};" src="https://github.com/urmilaj/30daycharts2024/tree/main/docs/data/day2/images/${d.common_name.replace(/\s/g, '')}.jpg"/>
+            <img width="40" height="40" style="border: solid 2px ${colorCategory(d.category)};" src="${getImgUrl(imgData.get(d.common_name))}"/>
             <div style="padding: 0px 0px 0px 10px; align-self: flex-start;">
                 <span style="font-size: 18px;">${d.common_name}</span>
                 <span style="display:inline-block; background-color: ${colorCategory(d.category)}; color:white; padding:1px 3px; border-radius:2px; font-weight: bold; font-size:14px;">${d.species_name}</span>

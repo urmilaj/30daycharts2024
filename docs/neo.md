@@ -96,12 +96,20 @@ const phyloOrderGroup = d3.group(birdGenusNeo, d=>d.order_name, d=>d.family_name
 const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
 ```
 
+```js
+const imgLinks = [{"order_name":"Otidiformes","species_name":"Neotis ludwigii","common_name":"Ludwig's Bustard","link":FileAttachment("./data/images/Ludwig'sBustard.jpg").href},{"order_name":"Cuculiformes","species_name":"Neomorphus geoffroyi","common_name":"Rufous-vented Ground-Cuckoo","link":FileAttachment("./data/images/Rufous-ventedGround-Cuckoo.jpg").href},{"order_name":"Cuculiformes","species_name":"Neomorphus radiolosus","common_name":"Banded Ground-Cuckoo","link":FileAttachment("./data/images/BandedGround-Cuckoo.jpg").href},{"order_name":"Accipitriformes","species_name":"Neophron percnopterus","common_name":"Egyptian Vulture","link":FileAttachment("./data/images/EgyptianVulture.jpg").href},{"order_name":"Psittaciformes","species_name":"Neophema chrysostoma","common_name":"Blue-winged Parrot","link":FileAttachment("./data/images/Blue-wingedParrot.jpg").href},{"order_name":"Psittaciformes","species_name":"Neophema chrysogaster","common_name":"Orange-bellied Parrot","link":FileAttachment("./data/images/Orange-belliedParrot.jpg").href},{"order_name":"Passeriformes","species_name":"Neodrepanis hypoxantha","common_name":"Yellow-bellied Sunbird-Asity","link":FileAttachment("./data/images/Yellow-belliedSunbird-Asity.jpg").href},{"order_name":"Otidiformes","species_name":"Neotis denhami","common_name":"Denham's Bustard","link":FileAttachment("./data/images/Denham'sBustard.jpg").href},{"order_name":"Otidiformes","species_name":"Neotis heuglinii","common_name":"Heuglin's Bustard","link":FileAttachment("./data/images/Heuglin'sBustard.jpg").href},{"order_name":"Otidiformes","species_name":"Neotis nuba","common_name":"Nubian's Bustard","link":FileAttachment("./data/images/Nubian'sBustard.jpg").href},{"order_name":"Cuculiformes","species_name":"Neomorphus squamiger","common_name":"Scaled Ground-Cuckoo","link":FileAttachment("./data/images/ScaledGround-Cuckoo.jpg").href},{"order_name":"Cuculiformes","species_name":"Neomorphus rufipennis","common_name":"Rufous-winged Ground-Cuckoo","link":FileAttachment("./data/images/Rufous-wingedGround-Cuckoo.jpg").href},{"order_name":"Cuculiformes","species_name":"Neomorphus pucheranii","common_name":"Red-billed Ground-Cuckoo","link":FileAttachment("./data/images/Red-billedGround-Cuckoo.jpg").href},{"order_name":"Falconiformes","species_name":"Neohierax insignis","common_name":"White-rumped Falcon","link":FileAttachment("./data/images/White-rumpedFalcon.jpg").href},{"order_name":"Psittaciformes","species_name":"Neophema bourkii","common_name":"Bourke's Parrot","link":FileAttachment("./data/images/Bourke'sParrot.jpg").href},{"order_name":"Psittaciformes","species_name":"Neophema elegans","common_name":"Elegant Parrot","link":FileAttachment("./data/images/ElegantParrot.jpg").href},{"order_name":"Psittaciformes","species_name":"Neophema petrophila","common_name":"Rock Parrot","link":FileAttachment("./data/images/RockParrot.jpg").href},{"order_name":"Psittaciformes","species_name":"Neophema pulchella","common_name":"Turquoise Parrot","link":FileAttachment("./data/images/TurquoiseParrot.jpg").href},{"order_name":"Psittaciformes","species_name":"Neophema splendida","common_name":"Scarlet-chested Parrot","link":FileAttachment("./data/images/Scarlet-chestedParrot.jpg").href},{"order_name":"Psittaciformes","species_name":"Neopsittacus musschenbroekii","common_name":"Yellow-billed Lorikeet","link":FileAttachment("./data/images/Yellow-billedLorikeet.jpg").href},{"order_name":"Psittaciformes","species_name":"Neopsittacus pullicauda","common_name":"Orange-billed Lorikeet","link":FileAttachment("./data/images/Orange-billedLorikeet.jpg").href},{"order_name":"Passeriformes","species_name":"Neodrepanis coruscans","common_name":"Common Sunbird-Asity","link":FileAttachment("./data/images/CommonSunbird-Asity.jpg").href},{"order_name":"Passeriformes","species_name":"Neoctantes niger","common_name":"Black Bushbird","link":FileAttachment("./data/images/BlackBushbird.jpg").href},{"order_name":"Passeriformes","species_name":"Neopelma pallescens","common_name":"Pale-bellied Tyrant-Manakin","link":FileAttachment("./data/images/Pale-belliedTyrant-Manakin.jpg").href},{"order_name":"Passeriformes","species_name":"Neopelma chrysocephalum","common_name":"Saffron-crested Tyrant-Manakin","link":FileAttachment("./data/images/Saffron-crestedTyrant-Manakin.jpg").href},{"order_name":"Passeriformes","species_name":"Neopelma aurifrons","common_name":"Wied's Tyrant-Manakin","link":FileAttachment("./data/images/Wied'sTyrant-Manakin.jpg").href},{"order_name":"Passeriformes","species_name":"Neopelma chrysolophum","common_name":"Serra do Mar Tyrant-Manakin","link":FileAttachment("./data/images/SerradoMarTyrant-Manakin.jpg").href},{"order_name":"Passeriformes","species_name":"Neopelma sulphureiventer","common_name":"Sulphur-bellied Tyrant-Manakin","link":FileAttachment("./data/images/Sulphur-belliedTyrant-Manakin.jpg").href},{"order_name":"Passeriformes","species_name":"Neopipo cinnamomea","common_name":"Cinnamon Manakin-Tyrant","link":FileAttachment("./data/images/CinnamonManakin-Tyrant.jpg").href},{"order_name":"Passeriformes","species_name":"Neoxolmis coronatus","common_name":"Black-crowned Monjita","link":FileAttachment("./data/images/Black-crownedMonjita.jpg").href},{"order_name":"Passeriformes","species_name":"Neoxolmis salinarum","common_name":"Salinas Monjita","link":FileAttachment("./data/images/SalinasMonjita.jpg").href},{"order_name":"Passeriformes","species_name":"Neoxolmis rubetra","common_name":"Rusty-backed Monjita","link":FileAttachment("./data/images/Rusty-backedMonjita.jpg").href},{"order_name":"Passeriformes","species_name":"Neoxolmis rufiventris","common_name":"Chocolate-vented Tyrant","link":FileAttachment("./data/images/Chocolate-ventedTyrant.jpg").href},{"order_name":"Passeriformes","species_name":"Neosericornis citreogularis","common_name":"Yellow-throated Scrubwren","link":FileAttachment("./data/images/Yellow-throatedScrubwren.jpg").href},{"order_name":"Passeriformes","species_name":"Neolalage banksiana","common_name":"Buff-bellied Monarch","link":FileAttachment("./data/images/Buff-belliedMonarch.jpg").href},{"order_name":"Passeriformes","species_name":"Neomixis tenella","common_name":"Common Jery","link":FileAttachment("./data/images/CommonJery.jpg").href},{"order_name":"Passeriformes","species_name":"Neomixis viridis","common_name":"Green Jery","link":FileAttachment("./data/images/GreenJery.jpg").href},{"order_name":"Passeriformes","species_name":"Neomixis striatigula","common_name":"Stripe-throated Jery","link":FileAttachment("./data/images/Stripe-throatedJery.jpg").href},{"order_name":"Passeriformes","species_name":"Neophedina cincta","common_name":"Banded Martin","link":FileAttachment("./data/images/BandedMartin.jpg").href},{"order_name":"Passeriformes","species_name":"Neolestes torquatus","common_name":"Black-collared Bulbul","link":FileAttachment("./data/images/Black-collaredBulbul.jpg").href},{"order_name":"Passeriformes","species_name":"Neocichla gutturalis","common_name":"Babbling Starling","link":FileAttachment("./data/images/BabblingStarling.jpg").href},{"order_name":"Passeriformes","species_name":"Neocossyphus rufus","common_name":"Red-tailed Ant-Thrush","link":FileAttachment("./data/images/Red-tailedAnt-Thrush.jpg").href},{"order_name":"Passeriformes","species_name":"Neocossyphus poensis","common_name":"White-tailed Ant-Thrush","link":FileAttachment("./data/images/White-tailedAnt-Thrush.jpg").href},{"order_name":"Passeriformes","species_name":"Neochmia phaeton","common_name":"Crimson Finch","link":FileAttachment("./data/images/CrimsonFinch.jpg").href},{"order_name":"Passeriformes","species_name":"Neochmia temporalis","common_name":"Red-browed Firetail","link":FileAttachment("./data/images/Red-browedFiretail.jpg").href},{"order_name":"Passeriformes","species_name":"Neothraupis fasciata","common_name":"White-banded Tanager","link":FileAttachment("./data/images/White-bandedTanager.jpg").href}]
+```
+
+```js
+const imgGroup = d3.group(imgLinks, d=>d.order_name, d=>d.common_name)
+```
+
 <div class="card">
     <b style="font-size:1.2rem;">Otidiformes - </b><b><i>Bustards</i></b>, are large, terrestrial birds living mainly in dry grassland areas.
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Otidiformes"), chartWidth, 300, 'horizontal')}</div>
     <br>
-    <div>${getNeoSpecies(phyloOrder.get("Otidiformes"))}</div>
+    <div>${getNeoSpecies(phyloOrder.get("Otidiformes"), imgGroup.get("Otidiformes"))}</div>
 </div>
 
 <div class="card">
@@ -109,7 +117,7 @@ const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Cuculiformes"), chartWidth, 300, 'horizontal')}</div>
     <br>
-    <div>${getNeoSpecies(phyloOrder.get("Cuculiformes"))}</div>
+    <div>${getNeoSpecies(phyloOrder.get("Cuculiformes"), imgGroup.get("Cuculiformes"))}</div>
 </div>
 
 <div class="card">
@@ -117,7 +125,7 @@ const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Accipitriformes"), chartWidth, 100, 'horizontal')}</div>
     <br>
-    <div>${getNeoSpecies(phyloOrder.get("Accipitriformes"))}</div>   
+    <div>${getNeoSpecies(phyloOrder.get("Accipitriformes"), imgGroup.get("Accipitriformes"))}</div>   
 </div>
 
 <div class="card">
@@ -125,7 +133,7 @@ const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Falconiformes"), chartWidth, 100, 'horizontal')}</div>
     <br>
-    <div>${getNeoSpecies(phyloOrder.get("Falconiformes"))}</div>
+    <div>${getNeoSpecies(phyloOrder.get("Falconiformes"), imgGroup.get("Falconiformes"))}</div>
 </div>
 
 <div class="card">
@@ -133,7 +141,7 @@ const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Psittaciformes"), chartWidth, 400, 'horizontal')}</div>
     <br>
-    <div>${getNeoSpecies(phyloOrder.get("Psittaciformes"))}</div>
+    <div>${getNeoSpecies(phyloOrder.get("Psittaciformes"), imgGroup.get("Psittaciformes"))}</div>
 </div>
 
 <div class="card">
@@ -141,7 +149,7 @@ const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
     <br><br>
     <div>${createPhyloTree(phyloOrderGroup.get("Passeriformes"), chartWidth, 800, 'horizontal')}</div>
     <br>
-    <div>${getNeoSpecies(phyloOrder.get("Passeriformes"))}</div>
+    <div>${getNeoSpecies(phyloOrder.get("Passeriformes"), imgGroup.get("Passeriformes"))}</div>
 </div>
 
 <style>
