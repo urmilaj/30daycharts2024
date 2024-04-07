@@ -10,7 +10,7 @@
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
-<link rel="modulepreload" href="./_import/components/day2/phylo.e17ba03d.js">
+<link rel="modulepreload" href="./_import/components/day2/phylo.468d323f.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
@@ -51,7 +51,7 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/day2/birdGenusNeo.csv", {"name":"./data/day2/birdGenusNeo.csv","mimeType":"text/csv","path":"./_file/data/day2/birdGenusNeo.07981f08.csv","lastModified":1712399893576});
+registerFile("./data/day2/birdGenusNeo.csv", {"name":"./data/day2/birdGenusNeo.csv","mimeType":"text/csv","path":"./_file/data/day2/birdGenusNeo.915c47b6.csv","lastModified":1712430509005});
 
 define({id: "9a61b534", inputs: ["FileAttachment"], outputs: ["birdGenusNeo"], body: (FileAttachment) => {
 const birdGenusNeo = FileAttachment("./data/day2/birdGenusNeo.csv").csv();
@@ -115,22 +115,15 @@ svg`<svg width={width} height="450">
 ))
 }});
 
-define({id: "868e4225", inputs: ["Generators","d3","birdGenusNeo"], outputs: ["createPhyloTree","getNeoSpecies","chartWidth","phyloOrderGroup","phyloGroup","phyloOrder","node","tree"], body: async (Generators,d3,birdGenusNeo) => {
-const {createPhyloTree, getNeoSpecies} = await import("./_import/components/day2/phylo.e17ba03d.js");
+define({id: "b62c4464", inputs: ["Generators","d3","birdGenusNeo"], outputs: ["createPhyloTree","getNeoSpecies","chartWidth","phyloOrderGroup","phyloOrder"], body: async (Generators,d3,birdGenusNeo) => {
+const {createPhyloTree, getNeoSpecies} = await import("./_import/components/day2/phylo.468d323f.js");
 
 const chartWidth = Generators.width(document.querySelector(".card"));
 
 const phyloOrderGroup = d3.group(birdGenusNeo, d=>d.order_name, d=>d.family_name, d=>d.species_name);
 
-const phyloGroup = d3.group(birdGenusNeo, d=>d.class_name, d=>d.order_name, d=>d.family_name,d=>d.species_name);
-
 const phyloOrder = d3.group(birdGenusNeo, d=>d.order_name);
-
-
-const node = d3.hierarchy(phyloGroup);
-
-const tree = d3.tree().size([700,500])(node);
-return {createPhyloTree,getNeoSpecies,chartWidth,phyloOrderGroup,phyloGroup,phyloOrder,node,tree};
+return {createPhyloTree,getNeoSpecies,chartWidth,phyloOrderGroup,phyloOrder};
 }});
 
 define({id: "f3bc36e4", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
@@ -151,9 +144,21 @@ createPhyloTree(phyloOrderGroup.get("Cuculiformes"), chartWidth, 300, 'horizonta
 ))
 }});
 
+define({id: "c9a61adc", inline: true, inputs: ["getNeoSpecies","phyloOrder","display"], body: async (getNeoSpecies,phyloOrder,display) => {
+display(await(
+getNeoSpecies(phyloOrder.get("Cuculiformes"))
+))
+}});
+
 define({id: "1460b628", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
 display(await(
 createPhyloTree(phyloOrderGroup.get("Accipitriformes"), chartWidth, 100, 'horizontal')
+))
+}});
+
+define({id: "2955d0f6", inline: true, inputs: ["getNeoSpecies","phyloOrder","display"], body: async (getNeoSpecies,phyloOrder,display) => {
+display(await(
+getNeoSpecies(phyloOrder.get("Accipitriformes"))
 ))
 }});
 
@@ -163,9 +168,21 @@ createPhyloTree(phyloOrderGroup.get("Falconiformes"), chartWidth, 100, 'horizont
 ))
 }});
 
+define({id: "5cd6cb09", inline: true, inputs: ["getNeoSpecies","phyloOrder","display"], body: async (getNeoSpecies,phyloOrder,display) => {
+display(await(
+getNeoSpecies(phyloOrder.get("Falconiformes"))
+))
+}});
+
 define({id: "346c5f1c", inline: true, inputs: ["createPhyloTree","phyloOrderGroup","chartWidth","display"], body: async (createPhyloTree,phyloOrderGroup,chartWidth,display) => {
 display(await(
 createPhyloTree(phyloOrderGroup.get("Psittaciformes"), chartWidth, 400, 'horizontal')
+))
+}});
+
+define({id: "acbf29b4", inline: true, inputs: ["getNeoSpecies","phyloOrder","display"], body: async (getNeoSpecies,phyloOrder,display) => {
+display(await(
+getNeoSpecies(phyloOrder.get("Psittaciformes"))
 ))
 }});
 
@@ -175,30 +192,9 @@ createPhyloTree(phyloOrderGroup.get("Passeriformes"), chartWidth, 800, 'horizont
 ))
 }});
 
-define({id: "e68e4090", inputs: ["tree","d3"], outputs: ["test","link"], body: (tree,d3) => {
-const test = tree.links().slice(1)
-
-const link = d3.link(d3.curveStep).source(d=>[d.source.y, d.source.x]).target(d=>[d.target.y, d.target.x])
-return {test,link};
-}});
-
-define({id: "fd7c6d7b", inputs: ["phyloOrder","display"], body: async (phyloOrder,display) => {
+define({id: "8f0756a0", inline: true, inputs: ["getNeoSpecies","phyloOrder","display"], body: async (getNeoSpecies,phyloOrder,display) => {
 display(await(
-// tree.descendants()
-// tree.links().slice(
-    phyloOrder.get("Otidiformes")
-// phyloOrderGroup.get("Otidiformes")
-))
-}});
-
-define({id: "f5b13378", inputs: ["svg","width","test","link","tree","display"], body: async (svg,width,test,link,tree,display) => {
-display(await(
-svg`<svg width=${width} height="750" style="background-color: lightblue;">
-    <g transform="translate(25,25)">
-        ${test.map(d=>svg`<path d="${link(d)}" fill="none" stroke="black" stroke-width=2/>`)}
-        ${tree.descendants().map(d=>svg`<text x="${d.y}" y="${d.x}" text-anchor="${d.depth<3?'end':'start'}">${d.data[0]}</text>`)}
-    </g>
-</svg>`
+getNeoSpecies(phyloOrder.get("Passeriformes"))
 ))
 }});
 
@@ -251,43 +247,49 @@ svg`<svg width=${width} height="750" style="background-color: lightblue;">
 <h2 id="aves-phylogenentic-tree" tabindex="-1"><a class="observablehq-header-anchor" href="#aves-phylogenentic-tree">Aves Phylogenentic Tree</a></h2>
 <p>Below are the bird orders that belong to class Aves - the families that belong to that order and various birds whose <strong>genus and species names</strong> that begin with <strong>neo</strong>.</p>
 <hr>
-<div id="cell-868e4225" class="observablehq observablehq--block"></div>
+<div id="cell-b62c4464" class="observablehq observablehq--block"></div>
 <div class="card">
     <b style="font-size:1.2rem;">Otidiformes - </b><b><i>Bustards</i></b>, are large, terrestrial birds living mainly in dry grassland areas.
     <br><br>
     <div><span id="cell-f3bc36e4" class="observablehq--loading"></span></div>
     <br>
-    <img width="100" height="100" src="./_file/data/day2/images/Ludwig'sBustard.f2c8c573.jpg">
     <div><span id="cell-a3944b3c" class="observablehq--loading"></span></div>
 </div>
 <div class="card">
     <b style="font-size:1.2rem;">Cuculiformes - </b><b><i>Cuckoos and Roadrunners</i></b>, small- to medium-sized birds.
     <br><br>
     <div><span id="cell-6a50cdb4" class="observablehq--loading"></span></div>
+    <br>
+    <div><span id="cell-c9a61adc" class="observablehq--loading"></span></div>
 </div>
 <div class="card">
     <b style="font-size:1.2rem;">Accipitriformess - </b><b><i>hawks, eagles, vultures, and kites</i></b>, an order of birds that includes most of the diurnal birds of prey but not falcons.
     <br><br>
     <div><span id="cell-1460b628" class="observablehq--loading"></span></div>
+    <br>
+    <div><span id="cell-2955d0f6" class="observablehq--loading"></span></div>   
 </div>
 <div class="card">
     <b style="font-size:1.2rem;">Falconiformes - </b><b><i>falcons and caracaras</i></b>, strong flyers and carnivores.
     <br><br>
     <div><span id="cell-f2160c6e" class="observablehq--loading"></span></div>
+    <br>
+    <div><span id="cell-5cd6cb09" class="observablehq--loading"></span></div>
 </div>
 <div class="card">
     <b style="font-size:1.2rem;">Psittaciformes - </b> <b><i>parrots</i></b>, found mostly in tropical and subtropical regions.
     <br><br>
     <div><span id="cell-346c5f1c" class="observablehq--loading"></span></div>
+    <br>
+    <div><span id="cell-acbf29b4" class="observablehq--loading"></span></div>
 </div>
 <div class="card">
     <b style="font-size:1.2rem;">Passeriformes - </b> <b><i>passerine</i></b>, includes more than half of all bird species. Sometimes known as perching birds, passerines generally have an anisodactyl arrangement of their toes, which facilitates perching.
     <br><br>
     <div><span id="cell-e84af6e5" class="observablehq--loading"></span></div>
+    <br>
+    <div><span id="cell-8f0756a0" class="observablehq--loading"></span></div>
 </div>
-<div id="cell-e68e4090" class="observablehq observablehq--block"></div>
-<div id="cell-fd7c6d7b" class="observablehq observablehq--block observablehq--loading"></div>
-<div id="cell-f5b13378" class="observablehq observablehq--block observablehq--loading"></div>
 <style>
     * {
         font-family: sans-serif;
@@ -296,10 +298,6 @@ svg`<svg width=${width} height="750" style="background-color: lightblue;">
     text {
         font-family: sans-serif;
     }
-
-    /* svg {
-        background-color: #fafafa;
-    } */
 
     .iucn_category {
         border-radius: 2.5px;
@@ -314,7 +312,7 @@ svg`<svg width=${width} height="750" style="background-color: lightblue;">
     }
 
     img {
-        border-radius: 50%;
+        border-radius: 10%;
     }
 </style></main>
 <footer id="observablehq-footer">
