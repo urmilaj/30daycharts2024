@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Makeover | #30DayChartChallenge - 2024</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_import/components/day3/getMovieInfo.1f6df3c0.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+import {registerFile} from "./_observablehq/stdlib.js";
+
+registerFile("./data/day3/disney.csv", {"name":"./data/day3/disney.csv","mimeType":"text/csv","path":"./_file/data/day3/disney.7e0b7a1f.csv","lastModified":1712647401661});
+
+define({id: "384fa28e", inputs: ["FileAttachment"], outputs: ["disneyMovies"], body: (FileAttachment) => {
+const disneyMovies = FileAttachment("./data/day3/disney.csv").csv({typed: true});
+return {disneyMovies};
+}});
+
+define({id: "c6cd8dd8", inputs: ["d3","disneyMovies","Generators"], outputs: ["getMovie","createSlopeChart","originalMovieGroup","movieChartWidth"], body: async (d3,disneyMovies,Generators) => {
+const {getMovie, createSlopeChart} = await import("./_import/components/day3/getMovieInfo.1f6df3c0.js");
+
+const originalMovieGroup = d3.group(disneyMovies, d=>d.original);
+
+const movieChartWidth = Generators.width(document.querySelector(".slope"));
+
+return {getMovie,createSlopeChart,originalMovieGroup,movieChartWidth};
+}});
+
+define({id: "057e3942", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("The Jungle Book"))
+))
+}});
+
+define({id: "ea545db8", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("The Jungle Book"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "2dffb254", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("The Jungle Book"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "9cc90a8a", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("One Hundred and One Dalmatians"))
+))
+}});
+
+define({id: "bc1ba7e5", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("One Hundred and One Dalmatians"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "5e1552e3", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("One Hundred and One Dalmatians"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "783f5bdd", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Alice in Wonderland"))
+))
+}});
+
+define({id: "74096fe9", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Alice in Wonderland"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "a7dc07f2", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Alice in Wonderland"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "35f326ea", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Fantasia"))
+))
+}});
+
+define({id: "3612ae75", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Fantasia"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "95035af6", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Fantasia"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "54ad0b42", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Sleeping Beauty"))
+))
+}});
+
+define({id: "485322c6", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Sleeping Beauty"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "36b8dc1e", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Sleeping Beauty"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "15fdf396", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Cinderella"))
+))
+}});
+
+define({id: "698a1132", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Cinderella"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "833c9977", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Cinderella"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "f222df46", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Beauty and the Beast"))
+))
+}});
+
+define({id: "d558d7f0", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Beauty and the Beast"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "5ab88bdf", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Beauty and the Beast"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "265d6bb8", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Dumbo"))
+))
+}});
+
+define({id: "cb60546e", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Dumbo"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "2ec503f1", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Dumbo"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "708bc3e5", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Aladdin"))
+))
+}});
+
+define({id: "448b3174", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Aladdin"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "3db5e9d4", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Aladdin"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "72a23c13", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("The Lion King"))
+))
+}});
+
+define({id: "19e20390", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("The Lion King"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "ca33ca2b", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("The Lion King"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "6b969fe0", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Mulan"))
+))
+}});
+
+define({id: "4d4ea221", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Mulan"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "f3ee2e4c", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Mulan"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "2aa076b1", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("Pinocchio"))
+))
+}});
+
+define({id: "1e776438", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Pinocchio"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "79d9a7ac", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("Pinocchio"), movieChartWidth, 'boxoffice')
+))
+}});
+
+define({id: "9a125f18", inline: true, inputs: ["getMovie","originalMovieGroup","display"], body: async (getMovie,originalMovieGroup,display) => {
+display(await(
+getMovie(originalMovieGroup.get("The Little Mermaid"))
+))
+}});
+
+define({id: "388fd45d", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("The Little Mermaid"), movieChartWidth, 'budget')
+))
+}});
+
+define({id: "8d9bb764", inline: true, inputs: ["createSlopeChart","originalMovieGroup","movieChartWidth","display"], body: async (createSlopeChart,originalMovieGroup,movieChartWidth,display) => {
+display(await(
+createSlopeChart(originalMovieGroup.get("The Little Mermaid"), movieChartWidth, 'boxoffice')
+))
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">#30DayChartChallenge - 2024</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
+  <ol>
+    <details open class="observablehq-section-active">
+      <summary>Week 1 - Comparisons</summary>
+      <ol>
+    <li class="observablehq-link"><a href="./part-to-whole">Day 1 - Part to Whole</a></li>
+    <li class="observablehq-link"><a href="./neo">Day 2 - Neo</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./makeover">Day 3 - Makeover</a></li>
+      </ol>
+    </details>
+  </ol>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type), h2:first-child, :not(h1) + h2">
+<nav>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="disney-movie-remakes" tabindex="-1"><a class="observablehq-header-anchor" href="#disney-movie-remakes">Disney movie remakes</a></h1>
+<p>Topic for day three, <strong>makeover</strong> of #30DayChartChallenge. <em>Slope charts</em>, one showing the <strong>budget</strong> for the original movie and the remake, the other showing the subsequent <strong>box office earnings</strong> of the original movie and remake.</p>
+<p><a href="https://en.wikipedia.org/wiki/List_of_Disney_live-action_adaptations_and_remakes_of_Disney_animated_films#Box_office_performance" target="_blank" rel="noopener noreferrer">Data Source: Wikipedia | List of adaptations and remakes of Disney animated films</a></p>
+<div id="cell-384fa28e" class="observablehq observablehq--block"></div>
+<div id="cell-c6cd8dd8" class="observablehq observablehq--block"></div>
+<div class="card">
+    <div><span id="cell-057e3942" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-ea545db8" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-2dffb254" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-9cc90a8a" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-bc1ba7e5" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-5e1552e3" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-783f5bdd" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-74096fe9" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-a7dc07f2" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-35f326ea" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-3612ae75" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-95035af6" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-54ad0b42" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-485322c6" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-36b8dc1e" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-15fdf396" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-698a1132" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-833c9977" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-f222df46" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-d558d7f0" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-5ab88bdf" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-265d6bb8" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-cb60546e" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-2ec503f1" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-708bc3e5" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-448b3174" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-3db5e9d4" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-72a23c13" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-19e20390" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-ca33ca2b" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-6b969fe0" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-4d4ea221" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-f3ee2e4c" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-2aa076b1" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-1e776438" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-79d9a7ac" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<div class="card">
+    <div><span id="cell-9a125f18" class="observablehq--loading"></span></div>
+    <div class="grid grid-cols-2">
+        <div class="slope"><span id="cell-388fd45d" class="observablehq--loading"></span></div>
+        <div class="slope"><span id="cell-8d9bb764" class="observablehq--loading"></span></div>
+    </div>
+</div>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+
+    .card h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    text {
+        font-family: sans-serif;
+        fill: white;
+    }
+
+    svg {
+        background-color: #333333;
+    }
+
+    circle {
+        fiil: #333333;
+        stroke: white;
+        stroke-width: 3;
+    }
+</style></main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./neo"><span>Day 2 - Neo</span></a></nav>
+<div><a href="https://github.com/urmilaj" target="_blank" rel="noopener noreferrer">Urmila J</a> | Built with <a href="https://observablehq.com/framework/" target="_blank" rel="noopener noreferrer">Observable Framework</a> | 2024</div>
+</footer>
+</div>

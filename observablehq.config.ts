@@ -12,7 +12,7 @@ export default {
       pages: [
         {name: "Day 1 - Part to Whole", path: "/part-to-whole"},
         {name: "Day 2 - Neo", path: "/neo"},
-        // {name: "Day 3 - Makeover", path: ""},
+        {name: "Day 3 - Makeover", path: "/makeover"},
         // {name: "Day 4 - Waffle", path: ""},
         // {name: "Day 5 - Diverging", path: ""},
         // {name: "DAY 6 - OECD (data day)", path: ""},
