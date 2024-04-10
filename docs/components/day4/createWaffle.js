@@ -5,7 +5,7 @@ export function createWaffle(waffleData, img) {
     const width = 400;
     const height = 600;
     const heightPadding = 120;
-    const totalWaffleSize = 380;
+    const totalWaffleSize = 350;
     const waffleSize = 55;
     const xScale = d3.scaleLinear().domain([0, 5]).range([0, totalWaffleSize]);
     const yScale = d3.scaleLinear().domain([0, 5]).range([0, height-heightPadding]);
