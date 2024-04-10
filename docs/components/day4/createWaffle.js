@@ -12,7 +12,7 @@ export function createWaffle(waffleData, img) {
     return htl.html`
     <div class="grid grid-cols-1">
         <svg width="${width}" height="${height}">
-            <g transform="translate(20,30)">
+            <g transform="translate(0,30)">
                 ${waffleData.map((d,i)=>htl.svg`
                     <rect x="${xScale(i%5)}" y="${yScale(Math.floor(i/5))}" width="${waffleSize}" height="${waffleSize}" fill="${img.get(d.artist) ? 'white' : '#333333'}"/>
                     <text x="${xScale(i%5)}" y="${yScale(Math.floor(i/5))}" dx="28" dy="-5" text-anchor="middle">
