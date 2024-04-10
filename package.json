@@ -3,9 +3,9 @@
   "private": true,
   "scripts": {
     "clean": "rimraf docs/.observablehq/cache",
-    "build": "rimraf dist && observable build",
+    "build": "rimraf dist && observable build && touch dist/.nojekyll",
     "dev": "observable preview",
-    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "deploy": "npm run build && git subtree push --prefix dist origin gh-pages",
     "observable": "observable"
   },
   "dependencies": {
