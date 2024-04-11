@@ -14,7 +14,7 @@ export default {
         {name: "Day 2 - Neo", path: "/neo"},
         {name: "Day 3 - Makeover", path: "/makeover"},
         {name: "Day 4 - Waffle", path: "/waffle"},
-        // {name: "Day 5 - Diverging", path: ""},
+        {name: "Day 5 - Diverging", path: "/diverging"},
         // {name: "DAY 6 - OECD (data day)", path: ""},
       ]
     },
