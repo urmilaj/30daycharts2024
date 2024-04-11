@@ -6,7 +6,7 @@ const formatTicks = (value) => {
 }
 
 const formatAnnotation = (value) => {
-    return (value/100000).toFixed(1) + "L"
+    return (value/100000).toFixed(2) + " L"
 }
 
 export function createBarChart(chartData, svgWidth) {

@@ -10,7 +10,7 @@
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
-<link rel="modulepreload" href="./_import/components/day5/emigrantBarChart.8b0ac657.js">
+<link rel="modulepreload" href="./_import/components/day5/emigrantBarChart.98a90e02.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
@@ -59,7 +59,7 @@ return {emigrantData};
 }});
 
 define({id: "23181756", inputs: ["Generators","d3","emigrantData"], outputs: ["chartWidth","groupCountry","createBarChart"], body: async (Generators,d3,emigrantData) => {
-const {createBarChart} = await import("./_import/components/day5/emigrantBarChart.8b0ac657.js");
+const {createBarChart} = await import("./_import/components/day5/emigrantBarChart.98a90e02.js");
 const chartWidth = Generators.width(document.querySelector(".card"));
 
 const groupCountry = d3.group(emigrantData, d=>d.country)
