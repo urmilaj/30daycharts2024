@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>OECD | #30DayChartChallenge - 2024</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_import/components/day6/smallMultiple.a175eb9a.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/_esm.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/_esm.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/_esm.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/_esm.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+import {registerFile} from "./_observablehq/stdlib.js";
+
+registerFile("./data/day6/oecd.csv", {"name":"./data/day6/oecd.csv","mimeType":"text/csv","path":"./_file/data/day6/oecd.13d7f14f.csv","lastModified":1712829198794});
+
+define({id: "5ae38cd6", inputs: ["FileAttachment"], outputs: ["chartData"], body: (FileAttachment) => {
+const chartData = FileAttachment("./data/day6/oecd.csv").csv({typed: true});
+return {chartData};
+}});
+
+define({id: "fd56d3c3", inputs: ["Generators","d3","chartData"], outputs: ["chartWidth","lineChartWidth","groupCountry","createLineChart","createSmallMultiple"], body: async (Generators,d3,chartData) => {
+const {createLineChart, createSmallMultiple} = await import("./_import/components/day6/smallMultiple.a175eb9a.js");
+const chartWidth = Generators.width(document.querySelector(".smallMultiple"));
+
+const lineChartWidth = Generators.width(document.querySelector(".lineChartContainer"));
+
+const groupCountry = d3.group(chartData, d=>d.country);
+
+
+return {chartWidth,lineChartWidth,groupCountry,createLineChart,createSmallMultiple};
+}});
+
+define({id: "e06c26d6", inputs: ["view","Inputs","groupCountry"], outputs: ["country"], body: (view,Inputs,groupCountry) => {
+const country = view(Inputs.select([null].concat([...groupCountry.keys()].filter(d=>d!=='India')), {label: "Select country"}))
+return {country};
+}});
+
+define({id: "2eefe02b", inline: true, inputs: ["createLineChart","groupCountry","lineChartWidth","country","display"], body: async (createLineChart,groupCountry,lineChartWidth,country,display) => {
+display(await(
+createLineChart(groupCountry, lineChartWidth, country)
+))
+}});
+
+define({id: "e733641d", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Albania"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "e53ba399", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Argentina"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "ab419d0a", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Armenia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "b0d3d04a", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Australia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "6b292f84", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Austria"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "8c8abcac", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Azerbaijan"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "20b2f9b0", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Belarus"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "0a6bb04d", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Belgium"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "feaa1a8c", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Bosnia and Herzegovina"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "450ab093", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Bulgaria"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "723122e4", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Cambodia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "e5a51d49", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Canada"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "c6859c0f", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Chile"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "3b4bcacc", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Croatia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "61ba7475", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Czechia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "60d24f3c", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Denmark"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "3a67e019", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Estonia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "89da8aa0", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Finland"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "5022dfa8", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("France"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "a4e64718", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Georgia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "877dc0bc", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Germany"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "12429898", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Greece"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "25cc7a35", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Hungary"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "ef940538", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Iceland"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "08bb9bda", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Ireland"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "1c0d55ff", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Israel"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "8a4de224", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Italy"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "e20668fe", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Japan"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "1e6d52ec", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Kazakhstan"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "87b6000d", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Korea"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "96ecaffb", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Latvia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "3674456e", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Liechtenstein"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "b43d5abd", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Lithuania"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "69e637d2", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Luxembourg"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "e7770f29", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Malta"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "ee11b26c", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Mexico"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "d40cfc4e", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Moldova"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "9a7d437e", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Montenegro"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "cf0bc010", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Morocco"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "f7791de6", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Netherlands"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "71e454e1", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("New Zealand"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "9aafd9c0", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("North Macedonia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "953c5bb2", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Norway"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "6d21e856", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Poland"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "d5c8bac1", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Portugal"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "1258549f", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Romania"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "96738790", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Russia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "2551a663", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Serbia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "d62992f4", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Slovak Republic"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "c598fb15", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Slovenia"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "1561394e", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Spain"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "7b31f5dc", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Sweden"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "bebf4c0d", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Switzerland"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "3a9dc636", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Türkiye"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "621b7af8", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Ukraine"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "6af7252d", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("United Kingdom"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "07533b19", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("United States"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+define({id: "42a6ab0f", inline: true, inputs: ["createSmallMultiple","groupCountry","chartWidth","display"], body: async (createSmallMultiple,groupCountry,chartWidth,display) => {
+display(await(
+createSmallMultiple([groupCountry.get("Uzbekistan"), groupCountry.get("India")], chartWidth)
+))
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">#30DayChartChallenge - 2024</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
+  <ol>
+    <details open class="observablehq-section-active">
+      <summary>Week 1 - Comparisons</summary>
+      <ol>
+    <li class="observablehq-link"><a href="./part-to-whole">Day 1 - Part to Whole</a></li>
+    <li class="observablehq-link"><a href="./neo">Day 2 - Neo</a></li>
+    <li class="observablehq-link"><a href="./makeover">Day 3 - Makeover</a></li>
+    <li class="observablehq-link"><a href="./waffle">Day 4 - Waffle</a></li>
+    <li class="observablehq-link"><a href="./diverging">Day 5 - Diverging</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./oecd">DAY 6 - OECD (data day)</a></li>
+      </ol>
+    </details>
+  </ol>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type), h2:first-child, :not(h1) + h2">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#interactive-line-chart">Interactive line chart</a></li>
+<li class="observablehq-secondary-link"><a href="#small-multiples">Small multiples</a></li>
+</ol>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<h1 id="road-accidents-in-india-vs-the-world" tabindex="-1"><a class="observablehq-header-anchor" href="#road-accidents-in-india-vs-the-world">Road accidents in India vs the world</a></h1>
+<p>Topic for day six, <strong>OECD (data day)</strong> of #30DayChartChallenge. A interactive line chart and a static small multiple chart visualizing accident data of India vs other countries between 2000 - 2020.</p>
+<p><a href="https://data.oecd.org/transport/road-accidents.htm" target="_blank" rel="noopener noreferrer">Data Source: OECD | The Organization for Economic Cooperation and Development</a></p>
+<div id="cell-5ae38cd6" class="observablehq observablehq--block"></div>
+<div id="cell-fd56d3c3" class="observablehq observablehq--block"></div>
+<h2 id="interactive-line-chart" tabindex="-1"><a class="observablehq-header-anchor" href="#interactive-line-chart">Interactive line chart</a></h2>
+<div id="cell-e06c26d6" class="observablehq observablehq--block"></div>
+<div class="grid grid-cols-1">
+    <div class="lineChartContainer card"><span id="cell-2eefe02b" class="observablehq--loading"></span></div>
+</div>
+<h2 id="small-multiples" tabindex="-1"><a class="observablehq-header-anchor" href="#small-multiples">Small multiples</a></h2>
+<div class="grid grid-cols-4">
+    <div class="card smallMultiple"><span id="cell-e733641d" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-e53ba399" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-ab419d0a" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-b0d3d04a" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-6b292f84" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-8c8abcac" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-20b2f9b0" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-0a6bb04d" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-feaa1a8c" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-450ab093" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-723122e4" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-e5a51d49" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-c6859c0f" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-3b4bcacc" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-61ba7475" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-60d24f3c" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-3a67e019" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-89da8aa0" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-5022dfa8" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-a4e64718" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-877dc0bc" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-12429898" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-25cc7a35" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-ef940538" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-08bb9bda" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-1c0d55ff" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-8a4de224" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-e20668fe" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-1e6d52ec" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-87b6000d" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-96ecaffb" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-3674456e" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-b43d5abd" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-69e637d2" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-e7770f29" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-ee11b26c" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-d40cfc4e" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-9a7d437e" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-cf0bc010" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-f7791de6" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-71e454e1" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-9aafd9c0" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-953c5bb2" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-6d21e856" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-d5c8bac1" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-1258549f" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-96738790" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-2551a663" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-d62992f4" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-c598fb15" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-1561394e" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-7b31f5dc" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-bebf4c0d" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-3a9dc636" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-621b7af8" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-6af7252d" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-07533b19" class="observablehq--loading"></span></div>
+    <div class="card"><span id="cell-42a6ab0f" class="observablehq--loading"></span></div>
+</div>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+    text {
+        font-family: sans-serif;
+    }
+</style></main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./diverging"><span>Day 5 - Diverging</span></a></nav>
+<div><a href="https://github.com/urmilaj" target="_blank" rel="noopener noreferrer">Urmila J</a> | Built with <a href="https://observablehq.com/framework/" target="_blank" rel="noopener noreferrer">Observable Framework</a> | 2024</div>
+</footer>
+</div>
