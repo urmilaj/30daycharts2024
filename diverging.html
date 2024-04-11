@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Waffle | #30DayChartChallenge - 2024</title>
+<title>Diverging | #30DayChartChallenge - 2024</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
 <link rel="preload" as="style" href="./_observablehq/theme-air.css">
@@ -10,7 +10,7 @@
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
-<link rel="modulepreload" href="./_import/components/day4/createWaffle.9c2a12f1.js">
+<link rel="modulepreload" href="./_import/components/day5/emigrantBarChart.8b0ac657.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
@@ -51,47 +51,26 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/day4/images/Beyoncé.jpg", {"name":"./data/day4/images/Beyoncé.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/Beyoncé.9198abe2.jpg","lastModified":1712682526462});
-registerFile("./data/day4/images/Eminem.jpg", {"name":"./data/day4/images/Eminem.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/Eminem.7dde90de.jpg","lastModified":1712682418235});
-registerFile("./data/day4/images/Jay-Z.jpg", {"name":"./data/day4/images/Jay-Z.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/Jay-Z.785bef38.jpg","lastModified":1712682377285});
-registerFile("./data/day4/images/LlCoolJ.jpg", {"name":"./data/day4/images/LlCoolJ.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/LlCoolJ.6031ade5.jpg","lastModified":1712682478806});
-registerFile("./data/day4/images/LouReed.jpg", {"name":"./data/day4/images/LouReed.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/LouReed.01919aea.jpg","lastModified":1712682110480});
-registerFile("./data/day4/images/Nirvana.jpg", {"name":"./data/day4/images/Nirvana.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/Nirvana.24f0f8e9.jpg","lastModified":1712682310746});
-registerFile("./data/day4/images/WeirdAlYankovic.jpg", {"name":"./data/day4/images/WeirdAlYankovic.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/WeirdAlYankovic.0d182da5.jpg","lastModified":1712682235536});
-registerFile("./data/day4/lyrics-waffle.csv", {"name":"./data/day4/lyrics-waffle.csv","mimeType":"text/csv","path":"./_file/data/day4/lyrics-waffle.a8ba9315.csv","lastModified":1712733139888});
+registerFile("./data/day5/indian_emigrants.csv", {"name":"./data/day5/indian_emigrants.csv","mimeType":"text/csv","path":"./_file/data/day5/indian_emigrants.0ed30ac2.csv","lastModified":1712772852129});
 
-define({id: "d2ebdd02", inputs: ["FileAttachment"], outputs: ["waffleData"], body: (FileAttachment) => {
-const waffleData = FileAttachment("./data/day4/lyrics-waffle.csv").csv({typed: true});
-return {waffleData};
+define({id: "abb6edae", inputs: ["FileAttachment"], outputs: ["emigrantData"], body: (FileAttachment) => {
+const emigrantData = FileAttachment("./data/day5/indian_emigrants.csv").csv();
+return {emigrantData};
 }});
 
-define({id: "4eb7ce72", inputs: ["FileAttachment"], outputs: ["artistImg"], body: (FileAttachment) => {
-const artistImg = [{"name":"Beyoncé","link":FileAttachment("./data/day4/images/Beyoncé.jpg").href},
-{"name":"Eminem","link":FileAttachment("./data/day4/images/Eminem.jpg").href},
-{"name":"Jay-Z","link":FileAttachment("./data/day4/images/Jay-Z.jpg").href},
-{"name":"L.L. Cool J","link":FileAttachment("./data/day4/images/LlCoolJ.jpg").href},
-{"name":"Lou Reed","link":FileAttachment("./data/day4/images/LouReed.jpg").href},
-{"name":"Nirvana","link":FileAttachment("./data/day4/images/Nirvana.jpg").href},
-{"name":"Weird Al Yankovic","link":FileAttachment("./data/day4/images/WeirdAlYankovic.jpg").href}];
-return {artistImg};
+define({id: "23181756", inputs: ["Generators","d3","emigrantData"], outputs: ["chartWidth","groupCountry","createBarChart"], body: async (Generators,d3,emigrantData) => {
+const {createBarChart} = await import("./_import/components/day5/emigrantBarChart.8b0ac657.js");
+const chartWidth = Generators.width(document.querySelector(".card"));
+
+const groupCountry = d3.group(emigrantData, d=>d.country)
+
+
+return {chartWidth,groupCountry,createBarChart};
 }});
 
-define({id: "362c58eb", inputs: ["d3","artistImg","Generators"], outputs: ["imgGroup","chartWidth"], body: (d3,artistImg,Generators) => {
-const imgGroup = d3.group(artistImg, d=>d.name);
-
-const chartWidth = Generators.width(document.querySelector(".waffleContainer"));
-return {imgGroup,chartWidth};
-}});
-
-define({id: "ae17a8b7", outputs: ["createWaffle"], body: async () => {
-const {createWaffle} = await import("./_import/components/day4/createWaffle.9c2a12f1.js");
-
-return {createWaffle};
-}});
-
-define({id: "4f02f856", inline: true, inputs: ["createWaffle","waffleData","imgGroup","display"], body: async (createWaffle,waffleData,imgGroup,display) => {
+define({id: "04cac943", inline: true, inputs: ["createBarChart","groupCountry","chartWidth","display"], body: async (createBarChart,groupCountry,chartWidth,display) => {
 display(await(
-createWaffle(waffleData.sort((a,b) => b.count-a.count), imgGroup)
+createBarChart(groupCountry, chartWidth)
 ))
 }});
 
@@ -113,8 +92,8 @@ createWaffle(waffleData.sort((a,b) => b.count-a.count), imgGroup)
     <li class="observablehq-link"><a href="./part-to-whole">Day 1 - Part to Whole</a></li>
     <li class="observablehq-link"><a href="./neo">Day 2 - Neo</a></li>
     <li class="observablehq-link"><a href="./makeover">Day 3 - Makeover</a></li>
-    <li class="observablehq-link observablehq-link-active"><a href="./waffle">Day 4 - Waffle</a></li>
-    <li class="observablehq-link"><a href="./diverging">Day 5 - Diverging</a></li>
+    <li class="observablehq-link"><a href="./waffle">Day 4 - Waffle</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./diverging">Day 5 - Diverging</a></li>
       </ol>
     </details>
   </ol>
@@ -122,41 +101,35 @@ createWaffle(waffleData.sort((a,b) => b.count-a.count), imgGroup)
 <script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
 <aside id="observablehq-toc" data-selector="h1:not(:first-of-type), h2:first-child, :not(h1) + h2">
 <nav>
-<div>Contents</div>
-<ol>
-<li class="observablehq-secondary-link"><a href="#waffle-frequency">Waffle frequency</a></li>
-</ol>
 </nav>
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<h1 id="waffle-discography" tabindex="-1"><a class="observablehq-header-anchor" href="#waffle-discography">Waffle Discography</a></h1>
-<p>Topic for day four, <strong>waffle</strong> of #30DayChartChallenge. <em>A waffle chart</em>, of artists' <strong>frequency</strong> of the word <strong>'waffle'</strong> in their song.</p>
-<p><a href="https://www.mldb.org/search?mq=waffle&amp;si=3&amp;mm=1&amp;ob=1" target="_blank" rel="noopener noreferrer">Data Source: The Music Lyrics Database</a></p>
-<hr>
-<div id="cell-d2ebdd02" class="observablehq observablehq--block"></div>
-<div id="cell-4eb7ce72" class="observablehq observablehq--block"></div>
-<div id="cell-362c58eb" class="observablehq observablehq--block"></div>
-<div id="cell-ae17a8b7" class="observablehq observablehq--block"></div>
-<h2 id="waffle-frequency" tabindex="-1"><a class="observablehq-header-anchor" href="#waffle-frequency">Waffle frequency</a></h2>
-<p><em>Weird Al Yankovic</em> mentions the word <em>waffle</em> <strong>26</strong> times in his song the <em>Waffle King</em>.</p>
-<div class="waffleContainer"><span id="cell-4f02f856" class="observablehq--loading"></span></div>
+<h1 id="where-do-indians-go%3F" tabindex="-1"><a class="observablehq-header-anchor" href="#where-do-indians-go%3F">Where do Indians go?</a></h1>
+<p>Topic for day five, <strong>diverging</strong> of #30DayChartChallenge. Indian emigrants and the countries they emigrated to in
+<span class="year" style="color: #e25d05;">1990</span> vs
+<span class="year" style="color: #bd2803;">2020</span>.</p>
+<p><a href="https://ourworldindata.org/migration" target="_blank" rel="noopener noreferrer">Data Source: Our World in Data</a></p>
+<div id="cell-abb6edae" class="observablehq observablehq--block"></div>
+<div id="cell-23181756" class="observablehq observablehq--block"></div>
+<div class="grid grid-cols-1">
+    <div class="card"><span id="cell-04cac943" class="observablehq--loading"></span></div>
+</div>
 <style>
     * {
         font-family: sans-serif;
     }
 
-    text {
-        font-family: sans-serif;
-        font-size: 11.5px;
-    }
+    
 
-    svg image {clip-path: inset(12% round 100%);
+    .year {
+        border-radius: 3px;
+        padding: 3px;
+        font-weight: bold;
     }
-</style>
-</main>
+</style></main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./makeover"><span>Day 3 - Makeover</span></a><a rel="next" href="./diverging"><span>Day 5 - Diverging</span></a></nav>
+<nav><a rel="prev" href="./waffle"><span>Day 4 - Waffle</span></a></nav>
 <div><a href="https://github.com/urmilaj" target="_blank" rel="noopener noreferrer">Urmila J</a> | Built with <a href="https://observablehq.com/framework/" target="_blank" rel="noopener noreferrer">Observable Framework</a> | 2024</div>
 </footer>
 </div>
