@@ -38,7 +38,7 @@ export function createBarChart(chartData, svgWidth) {
                 </g>
                 <g transform="translate(${svgWidth/2},20)">
                     ${[...chartData].map((d,i)=>htl.svg`
-                        <text x="${scale(0)}" y="${countryScale(d[0])}" dx="${i >= 7 ? 5 : -5}" dy="-3" text-anchor="${i >=7 ? 'start' : 'end'}" style="font-weight: bold; font-size:12px;" fill="#333333">${i >=7 ? d[0]+' - ' + formatAnnotation(d[1][0][1990]) : formatAnnotation(d[1][0][1990])+' - '+d[0]}</text>
+                        <text x="${scale(0)}" y="${countryScale(d[0])}" dx="${i >= 7 ? 5 : -5}" dy="-3" text-anchor="${i >=7 ? 'start' : 'end'}" style="font-weight: bold; font-size:12px;" fill="#333333">${i >=7 ? d[0]+' - ' + formatAnnotation(d[1][0][2020]) : formatAnnotation(d[1][0][1990])+' - '+d[0]}</text>
                         <rect x="${scale(-d[1][0][1990])}" y="${countryScale(d[0])}" width="${scale(d[1][0][1990])}" height="${countryScale.bandwidth()}" fill="${colorCategory(1990)}" stroke="white"/>
                         <rect x="0" y="${countryScale(d[0])}" width="${scale(d[1][0][2020])}" height="${countryScale.bandwidth()}" fill="${colorCategory(2020)}" stroke="white"/>
                     `)}
