@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Diverging | #30DayChartChallenge - 2024</title>
+<title>Reuters Graphics | #30DayChartChallenge - 2024</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_observablehq/theme-air.css">
+<link rel="preload" as="style" href="./_observablehq/theme-deep-space.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-deep-space.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
-<link rel="modulepreload" href="./_import/components/day5/emigrantBarChart.836c5373.js">
+<link rel="modulepreload" href="./_import/components/day12/bubbleChart.d3039544.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-brush@3.0.0/_esm.js">
@@ -51,26 +55,34 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/day5/indian_emigrants.csv", {"name":"./data/day5/indian_emigrants.csv","mimeType":"text/csv","path":"./_file/data/day5/indian_emigrants.0ed30ac2.csv","lastModified":1712772852129});
+registerFile("./data/day12/objects-outer-space.csv", {"name":"./data/day12/objects-outer-space.csv","mimeType":"text/csv","path":"./_file/data/day12/objects-outer-space.2611e84e.csv","lastModified":1712915666948});
 
-define({id: "abb6edae", inputs: ["FileAttachment"], outputs: ["emigrantData"], body: (FileAttachment) => {
-const emigrantData = FileAttachment("./data/day5/indian_emigrants.csv").csv();
-return {emigrantData};
+define({id: "e4065034", inputs: ["FileAttachment"], outputs: ["spaceData"], body: (FileAttachment) => {
+const spaceData = FileAttachment("./data/day12/objects-outer-space.csv").csv({typed:true});
+return {spaceData};
 }});
 
-define({id: "23181756", inputs: ["Generators","d3","emigrantData"], outputs: ["chartWidth","groupCountry","createBarChart"], body: async (Generators,d3,emigrantData) => {
-const {createBarChart} = await import("./_import/components/day5/emigrantBarChart.836c5373.js");
-const chartWidth = Generators.width(document.querySelector(".card"));
+define({id: "9bc50322", inputs: ["d3","spaceData","Generators"], outputs: ["formatYear","tickFormat","yearGroup","chartWidth","createBubbleChart"], body: async (d3,spaceData,Generators) => {
+const {createBubbleChart} = await import("./_import/components/day12/bubbleChart.d3039544.js");
+const formatYear = d3.timeParse("%Y");
+const tickFormat = d3.timeFormat("%Y");
 
-const groupCountry = d3.group(emigrantData, d=>d.country)
+const yearGroup = d3.group(spaceData.sort((a,b)=>b.Year-a.Year), d=>formatYear(d.Year), d=>d.Entity);
+
+const chartWidth = Generators.width(document.querySelector(".bubbleChart"));
 
 
-return {chartWidth,groupCountry,createBarChart};
+return {formatYear,tickFormat,yearGroup,chartWidth,createBubbleChart};
 }});
 
-define({id: "04cac943", inline: true, inputs: ["createBarChart","groupCountry","chartWidth","display"], body: async (createBarChart,groupCountry,chartWidth,display) => {
+define({id: "6909ae46", inputs: ["view","Inputs","spaceData"], outputs: ["selectedEntity"], body: (view,Inputs,spaceData) => {
+const selectedEntity = view(Inputs.select([null].concat([...new Set(spaceData.map(d=>d.Entity))]), {label: "Select Entity or Country"}));
+return {selectedEntity};
+}});
+
+define({id: "27afa7fc", inline: true, inputs: ["createBubbleChart","spaceData","chartWidth","selectedEntity","display"], body: async (createBubbleChart,spaceData,chartWidth,selectedEntity,display) => {
 display(await(
-createBarChart(groupCountry, chartWidth)
+createBubbleChart(spaceData, chartWidth, selectedEntity)
 ))
 }});
 
@@ -86,21 +98,21 @@ createBarChart(groupCountry, chartWidth)
   <div id="observablehq-search-results"></div>
   <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
   <ol>
-    <details open class="observablehq-section-active">
+    <details open>
       <summary>Week 1 - Comparisons</summary>
       <ol>
     <li class="observablehq-link"><a href="./part-to-whole">Day 1 - Part to Whole</a></li>
     <li class="observablehq-link"><a href="./neo">Day 2 - Neo</a></li>
     <li class="observablehq-link"><a href="./makeover">Day 3 - Makeover</a></li>
     <li class="observablehq-link"><a href="./waffle">Day 4 - Waffle</a></li>
-    <li class="observablehq-link observablehq-link-active"><a href="./diverging">Day 5 - Diverging</a></li>
+    <li class="observablehq-link"><a href="./diverging">Day 5 - Diverging</a></li>
     <li class="observablehq-link"><a href="./oecd">DAY 6 - OECD (data day)</a></li>
       </ol>
     </details>
-    <details open>
+    <details open class="observablehq-section-active">
       <summary>Week 2 - Distributions</summary>
       <ol>
-    <li class="observablehq-link"><a href="./reuters-graphics">Day 12 - Reuters Graphics (theme day)</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./reuters-graphics">Day 12 - Reuters Graphics (theme day)</a></li>
       </ol>
     </details>
   </ol>
@@ -112,31 +124,25 @@ createBarChart(groupCountry, chartWidth)
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<h1 id="where-do-indians-go%3F" tabindex="-1"><a class="observablehq-header-anchor" href="#where-do-indians-go%3F">Where do Indians go?</a></h1>
-<p>Topic for day five, <strong>diverging</strong> of #30DayChartChallenge. Indian emigrants and the countries they emigrated to in
-<span class="year" style="color: #e25d05;">1990</span> vs
-<span class="year" style="color: #bd2803;">2020</span>.</p>
-<p><a href="https://ourworldindata.org/migration" target="_blank" rel="noopener noreferrer">Data Source: Our World in Data</a></p>
-<div id="cell-abb6edae" class="observablehq observablehq--block"></div>
-<div id="cell-23181756" class="observablehq observablehq--block"></div>
-<div class="grid grid-cols-1">
-    <div class="card"><span id="cell-04cac943" class="observablehq--loading"></span></div>
-</div>
+<h1 id="objects-launched-into-outer-space" tabindex="-1"><a class="observablehq-header-anchor" href="#objects-launched-into-outer-space">Objects launched into outer space</a></h1>
+<p>Topic for day twelve, <strong>reuters graphics (theme day)</strong> of #30DayChartChallenge. A interactive bubble chart of cumulative number of objects launched into space by countries and other entity between <strong>1957 and 2023</strong>.</p>
+<p><a href="https://ourworldindata.org/grapher/cumulative-number-of-objects-launched-into-outer-space" target="_blank" rel="noopener noreferrer">Data Source: Our World In Data | Space Exploration and Satellites</a> <br>
+<a href="https://thenounproject.com/icon/space-6459053/" target="_blank" rel="noopener noreferrer">Spaceship icon: Space by nakals | The Noun Project</a></p>
+<div id="cell-e4065034" class="observablehq observablehq--block"></div>
+<div id="cell-9bc50322" class="observablehq observablehq--block"></div>
+<div id="cell-6909ae46" class="observablehq observablehq--block"></div>
+<div class="card bubbleChart"><span id="cell-27afa7fc" class="observablehq--loading"></span></div>
 <style>
     * {
         font-family: sans-serif;
     }
 
-    
-
-    .year {
-        border-radius: 3px;
-        padding: 3px;
-        font-weight: bold;
+    text {
+        font-family: sans-serif;
     }
 </style></main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./waffle"><span>Day 4 - Waffle</span></a><a rel="next" href="./oecd"><span>DAY 6 - OECD (data day)</span></a></nav>
+<nav><a rel="prev" href="./oecd"><span>DAY 6 - OECD (data day)</span></a></nav>
 <div><a href="https://github.com/urmilaj" target="_blank" rel="noopener noreferrer">Urmila J</a> | Built with <a href="https://observablehq.com/framework/" target="_blank" rel="noopener noreferrer">Observable Framework</a> | 2024</div>
 </footer>
 </div>

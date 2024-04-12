@@ -18,17 +18,17 @@ export default {
         {name: "DAY 6 - OECD (data day)", path: "/oecd"},
       ]
     },
-    // {
-    //   name: "Week 2 - Distributions",
-    //   pages: [
+    {
+      name: "Week 2 - Distributions",
+      pages: [
     //     {name: "Day 7 - Hazards", path: ""},
     //     {name: "Day 8 - Circular", path: ""},
     //     {name: "Day 9 - Major/Minor", path: ""},
     //     {name: "Day 10 - Physical", path: ""},
     //     {name: "Day 11 - Mobile-friendly", path: ""},
-    //     {name: "Day 12 - Reuters Graphics (theme day)", path: ""},
-    //   ]
-    // },
+        {name: "Day 12 - Reuters Graphics (theme day)", path: "/reuters-graphics"},
+      ]
+    },
     // {
     //   name: "Week 3 - Relationships",
     //   pages: [

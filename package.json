@@ -12,7 +12,8 @@
     "@observablehq/framework": "latest",
     "d3-dsv": "^3.0.1",
     "d3-time-format": "^4.1.0",
-    "roughjs": "^4.6.6"
+    "roughjs": "^4.6.6",
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "rimraf": "^5.0.5"
