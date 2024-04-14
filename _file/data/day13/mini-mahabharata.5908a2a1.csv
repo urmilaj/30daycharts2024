@@ -1,0 +1,16 @@
+﻿name,father,mother,husband,wife,type,x,y,dx,dy
+Pandu,Vichitravirya,Ambalika,-,Kunti,-,0,0,0,0
+Yudhishthira,Yama,Kunti,-,-,pandavas,-25,-25,0,0
+Bhima,Vayu,Kunti,-,-,pandavas,0,30,0,0
+Arjuna,Indra,Kunti,-,-,pandavas,0,-25,0,0
+Nakula,Ashvini Kumaras,Madri,-,-,pandavas,0,30,0,0
+Sahadeva,Ashvini Kumaras,Madri,-,-,pandavas,10,-25,0,0
+Karna,Surya,Kunti,-,-,-,0,0,0,0
+Dhritarashtra,Vichitravirya,Ambika,-,Gandhari,-,0,0,0,0
+Duryodhana,Dhritarashtra,Gandhari,-,-,kauravas,0,0,0,0
+Duhsala,Dhritarashtra,Gandhari,-,-,-,0,0,0,0
+Dushasana,Dhritarashtra,Gandhari,-,-,kauravas,0,0,0,0
+98 sons,Dhritarashtra,Gandhari,-,-,kauravas,0,0,0,0
+Kunti,-,-,Pandu,-,-,0,0,0,0
+Gandhari,-,-,Dhritarashtra,-,-,0,0,0,0
+Yuyutsu,Dhritarashtra,Sughada,-,-,-,0,0,0,0

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Waffle | #30DayChartChallenge - 2024</title>
+<title>Family | #30DayChartChallenge - 2024</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
 <link rel="preload" as="style" href="./_observablehq/theme-air.css">
@@ -10,9 +10,10 @@
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
-<link rel="modulepreload" href="./_import/components/day4/createWaffle.9c2a12f1.js">
+<link rel="modulepreload" href="./_import/components/day13/infographic.26d7d01e.js">
 <link rel="modulepreload" href="./_npm/htl@0.3.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3@7.9.0/_esm.js">
+<link rel="modulepreload" href="./_npm/d3-hexbin@0.2.2/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-array@3.2.4/_esm.js">
 <link rel="modulepreload" href="./_npm/d3-axis@3.0.0/_esm.js">
@@ -51,47 +52,27 @@
 import {define} from "./_observablehq/client.js";
 import {registerFile} from "./_observablehq/stdlib.js";
 
-registerFile("./data/day4/images/Beyoncé.jpg", {"name":"./data/day4/images/Beyoncé.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/Beyoncé.9198abe2.jpg","lastModified":1712682526462});
-registerFile("./data/day4/images/Eminem.jpg", {"name":"./data/day4/images/Eminem.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/Eminem.7dde90de.jpg","lastModified":1712682418235});
-registerFile("./data/day4/images/Jay-Z.jpg", {"name":"./data/day4/images/Jay-Z.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/Jay-Z.785bef38.jpg","lastModified":1712682377285});
-registerFile("./data/day4/images/LlCoolJ.jpg", {"name":"./data/day4/images/LlCoolJ.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/LlCoolJ.6031ade5.jpg","lastModified":1712682478806});
-registerFile("./data/day4/images/LouReed.jpg", {"name":"./data/day4/images/LouReed.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/LouReed.01919aea.jpg","lastModified":1712682110480});
-registerFile("./data/day4/images/Nirvana.jpg", {"name":"./data/day4/images/Nirvana.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/Nirvana.24f0f8e9.jpg","lastModified":1712682310746});
-registerFile("./data/day4/images/WeirdAlYankovic.jpg", {"name":"./data/day4/images/WeirdAlYankovic.jpg","mimeType":"image/jpeg","path":"./_file/data/day4/images/WeirdAlYankovic.0d182da5.jpg","lastModified":1712682235536});
-registerFile("./data/day4/lyrics-waffle.csv", {"name":"./data/day4/lyrics-waffle.csv","mimeType":"text/csv","path":"./_file/data/day4/lyrics-waffle.a8ba9315.csv","lastModified":1712733139888});
+registerFile("./data/day13/mini-mahabharata.csv", {"name":"./data/day13/mini-mahabharata.csv","mimeType":"text/csv","path":"./_file/data/day13/mini-mahabharata.5908a2a1.csv","lastModified":1713095742650});
 
-define({id: "d2ebdd02", inputs: ["FileAttachment"], outputs: ["waffleData"], body: (FileAttachment) => {
-const waffleData = FileAttachment("./data/day4/lyrics-waffle.csv").csv({typed: true});
-return {waffleData};
+define({id: "5cb56593", inputs: ["FileAttachment"], outputs: ["familyData"], body: (FileAttachment) => {
+const familyData = FileAttachment("./data/day13/mini-mahabharata.csv").csv();
+return {familyData};
 }});
 
-define({id: "4eb7ce72", inputs: ["FileAttachment"], outputs: ["artistImg"], body: (FileAttachment) => {
-const artistImg = [{"name":"Beyoncé","link":FileAttachment("./data/day4/images/Beyoncé.jpg").href},
-{"name":"Eminem","link":FileAttachment("./data/day4/images/Eminem.jpg").href},
-{"name":"Jay-Z","link":FileAttachment("./data/day4/images/Jay-Z.jpg").href},
-{"name":"L.L. Cool J","link":FileAttachment("./data/day4/images/LlCoolJ.jpg").href},
-{"name":"Lou Reed","link":FileAttachment("./data/day4/images/LouReed.jpg").href},
-{"name":"Nirvana","link":FileAttachment("./data/day4/images/Nirvana.jpg").href},
-{"name":"Weird Al Yankovic","link":FileAttachment("./data/day4/images/WeirdAlYankovic.jpg").href}];
-return {artistImg};
+define({id: "c01996a3", inputs: ["Generators","d3","familyData"], outputs: ["chartWidth","drawInfographic","familyGroup","godColorScale"], body: async (Generators,d3,familyData) => {
+const {drawInfographic} = await import("./_import/components/day13/infographic.26d7d01e.js");
+const chartWidth = Generators.width(document.querySelector(".infographic"));
+
+
+const familyGroup = d3.group(familyData, d=>d.type);
+
+const godColorScale = d3.scaleOrdinal().domain(["Yama", "Vayu", "Indra", "Ashvini Kumaras"]).range(['#363636','#9895f9','#72caff','#a4295f']);
+return {chartWidth,drawInfographic,familyGroup,godColorScale};
 }});
 
-define({id: "362c58eb", inputs: ["d3","artistImg","Generators"], outputs: ["imgGroup","chartWidth"], body: (d3,artistImg,Generators) => {
-const imgGroup = d3.group(artistImg, d=>d.name);
-
-const chartWidth = Generators.width(document.querySelector(".waffleContainer"));
-return {imgGroup,chartWidth};
-}});
-
-define({id: "ae17a8b7", outputs: ["createWaffle"], body: async () => {
-const {createWaffle} = await import("./_import/components/day4/createWaffle.9c2a12f1.js");
-
-return {createWaffle};
-}});
-
-define({id: "4f02f856", inline: true, inputs: ["createWaffle","waffleData","imgGroup","display"], body: async (createWaffle,waffleData,imgGroup,display) => {
+define({id: "8dd40ee9", inline: true, inputs: ["drawInfographic","familyGroup","chartWidth","display"], body: async (drawInfographic,familyGroup,chartWidth,display) => {
 display(await(
-createWaffle(waffleData.sort((a,b) => b.count-a.count), imgGroup)
+drawInfographic(familyGroup, chartWidth)
 ))
 }});
 
@@ -107,13 +88,13 @@ createWaffle(waffleData.sort((a,b) => b.count-a.count), imgGroup)
   <div id="observablehq-search-results"></div>
   <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const a=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(a.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>a.classList.remove("observablehq-sidebar-open"));}</script>
   <ol>
-    <details open class="observablehq-section-active">
+    <details open>
       <summary>Week 1 - Comparisons</summary>
       <ol>
     <li class="observablehq-link"><a href="./part-to-whole">Day 1 - Part to Whole</a></li>
     <li class="observablehq-link"><a href="./neo">Day 2 - Neo</a></li>
     <li class="observablehq-link"><a href="./makeover">Day 3 - Makeover</a></li>
-    <li class="observablehq-link observablehq-link-active"><a href="./waffle">Day 4 - Waffle</a></li>
+    <li class="observablehq-link"><a href="./waffle">Day 4 - Waffle</a></li>
     <li class="observablehq-link"><a href="./diverging">Day 5 - Diverging</a></li>
     <li class="observablehq-link"><a href="./oecd">DAY 6 - OECD (data day)</a></li>
       </ol>
@@ -124,10 +105,10 @@ createWaffle(waffleData.sort((a,b) => b.count-a.count), imgGroup)
     <li class="observablehq-link"><a href="./reuters-graphics">Day 12 - Reuters Graphics (theme day)</a></li>
       </ol>
     </details>
-    <details open>
+    <details open class="observablehq-section-active">
       <summary>Week 3 - Relationships</summary>
       <ol>
-    <li class="observablehq-link"><a href="./family">Day 14 - Family</a></li>
+    <li class="observablehq-link observablehq-link-active"><a href="./family">Day 14 - Family</a></li>
       </ol>
     </details>
   </ol>
@@ -137,39 +118,50 @@ createWaffle(waffleData.sort((a,b) => b.count-a.count), imgGroup)
 <nav>
 <div>Contents</div>
 <ol>
-<li class="observablehq-secondary-link"><a href="#waffle-frequency">Waffle frequency</a></li>
+<li class="observablehq-secondary-link"><a href="#the-rival-cousins">The rival cousins</a></li>
 </ol>
 </nav>
 </aside>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<h1 id="waffle-discography" tabindex="-1"><a class="observablehq-header-anchor" href="#waffle-discography">Waffle Discography</a></h1>
-<p>Topic for day four, <strong>waffle</strong> of #30DayChartChallenge. <em>A waffle chart</em>, of artists' <strong>frequency</strong> of the word <strong>'waffle'</strong> in their song.</p>
-<p><a href="https://www.mldb.org/search?mq=waffle&amp;si=3&amp;mm=1&amp;ob=1" target="_blank" rel="noopener noreferrer">Data Source: The Music Lyrics Database</a></p>
+<h1 id="pandava-and-kaurava" tabindex="-1"><a class="observablehq-header-anchor" href="#pandava-and-kaurava">Pandava and Kaurava</a></h1>
+<p>Topic for day thirteen, <strong>family</strong> of #30DayChartChallenge. An infographic of the character relationships in the epic <strong>Mahabharata</strong>.</p>
+<p><a href="https://en.wikipedia.org/wiki/List_of_characters_in_the_Mahabharata" target="_blank" rel="noopener noreferrer">Data Source: List of characters in the Mahabharata</a></p>
+<div id="cell-5cb56593" class="observablehq observablehq--block"></div>
+<div id="cell-c01996a3" class="observablehq observablehq--block"></div>
+<br>
+<h2 id="the-rival-cousins" tabindex="-1"><a class="observablehq-header-anchor" href="#the-rival-cousins">The rival cousins</a></h2>
+<p>The pandavas and kauravas were cousins, from paternal grandfather <strong>Vichitravirya</strong>, the kuru king. Vichitravirya had two wives Ambika and Ambalika. Ambika and Ambalika both had sons <span class="father" style="background-color:#401F71;">Dhritarashtra</span> and <span class="father" style="background-color:#e9b9b9;">Pandu</span> respectively. <span class="father" style="background-color:#e9b9b9;">King Pandu</span> was cursed by a sage and was unable to bear children. He was the foster father of the Pandavas, his wives <span class="father" style="background-color:#d37676;">Kunti</span> and <span class="father" style="background-color:#EE4266;">Madri</span> were given <strong>boons</strong> by the gods to bear children.
+The <strong>Kurukshetra War</strong> was subsequently fought by the pandavas and kauravas.</p>
 <hr>
-<div id="cell-d2ebdd02" class="observablehq observablehq--block"></div>
-<div id="cell-4eb7ce72" class="observablehq observablehq--block"></div>
-<div id="cell-362c58eb" class="observablehq observablehq--block"></div>
-<div id="cell-ae17a8b7" class="observablehq observablehq--block"></div>
-<h2 id="waffle-frequency" tabindex="-1"><a class="observablehq-header-anchor" href="#waffle-frequency">Waffle frequency</a></h2>
-<p><em>Weird Al Yankovic</em> mentions the word <em>waffle</em> <strong>26</strong> times in his song the <em>Waffle King</em>.</p>
-<div class="waffleContainer"><span id="cell-4f02f856" class="observablehq--loading"></span></div>
+<div class="grid grid-cols-1 infographic"><span id="cell-8dd40ee9" class="observablehq--loading"></span></div>
 <style>
     * {
         font-family: sans-serif;
     }
 
-    text {
-        font-family: sans-serif;
-        font-size: 11.5px;
+    .father {
+        border-radius: 3px;
+        padding: 3px;
+        font-weight: bold;
+        color: white;
     }
 
-    svg image {clip-path: inset(12% round 100%);
+    text {
+        font-family: sans-serif;
     }
-</style>
-</main>
+
+    .infographic {
+        max-width: 450px;
+    }
+
+    path .Yudhishthira {
+        background: rgb(232,131,23);
+        background: linear-gradient(90deg, rgba(232,131,23,1) 50%, rgba(211,118,118,1) 50%);
+    }
+</style></main>
 <footer id="observablehq-footer">
-<nav><a rel="prev" href="./makeover"><span>Day 3 - Makeover</span></a><a rel="next" href="./diverging"><span>Day 5 - Diverging</span></a></nav>
+<nav><a rel="prev" href="./reuters-graphics"><span>Day 12 - Reuters Graphics (theme day)</span></a></nav>
 <div><a href="https://github.com/urmilaj" target="_blank" rel="noopener noreferrer">Urmila J</a> | Built with <a href="https://observablehq.com/framework/" target="_blank" rel="noopener noreferrer">Observable Framework</a> | 2024</div>
 </footer>
 </div>
