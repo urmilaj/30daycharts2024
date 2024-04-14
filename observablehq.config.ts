@@ -29,17 +29,17 @@ export default {
         {name: "Day 12 - Reuters Graphics (theme day)", path: "/reuters-graphics"},
       ]
     },
-    // {
-    //   name: "Week 3 - Relationships",
-    //   pages: [
-    //     {name: "Day 14 - Family", path: ""},
-    //     {name: "Day 15 - Heatmap", path: ""},
-    //     {name: "Day 16 - Historical", path: ""},
-    //     {name: "Day 17 - Weather", path: ""},
-    //     {name: "Day 18 - Networks", path: ""},
-    //     {name: "Day 19 - Asian Development Bank (data day)", path: ""},
-    //   ]
-    // },
+    {
+      name: "Week 3 - Relationships",
+      pages: [
+        {name: "Day 14 - Family", path: "/family"},
+        // {name: "Day 15 - Heatmap", path: ""},
+        // {name: "Day 16 - Historical", path: ""},
+        // {name: "Day 17 - Weather", path: ""},
+        // {name: "Day 18 - Networks", path: ""},
+        // {name: "Day 19 - Asian Development Bank (data day)", path: ""},
+      ]
+    },
     // {
     //   name: "Week 4 - Timeseries",
     //   pages: [
